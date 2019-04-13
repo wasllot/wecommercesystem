@@ -8,8 +8,8 @@
 				<!-- CONTAINER -->
 				<div class="container">
 					<div class="flex_caption1">
-						<p class="title1 captionDelay2 FromTop">mega sell</p>
-						<p class="title2 captionDelay3 FromTop d-sm-none d-md-block">last week of sales</p>
+						<p class="title1 captionDelay2 FromTop">Full Repuesto</p>
+						<p class="title2 captionDelay3 FromTop d-sm-none d-md-block">Los mejores productos</p>
 					</div>
 					<div class="flex_caption3 slide_banner_wrapper d-flex">
 						<a class="slide_banner slide1_banner1 captionDelay4 FromBottom"
@@ -33,8 +33,8 @@
 				<!-- CONTAINER -->
 				<div class="container">
 					<div class="flex_caption1">
-						<p class="title1 captionDelay2 FromTop">mega sell</p>
-						<p class="title2 captionDelay3 FromTop d-sm-none d-md-block">last week of sales</p>
+						<p class="title1 captionDelay2 FromTop">Full repuesto</p>
+						<p class="title2 captionDelay3 FromTop d-sm-none d-md-block">Todo lo que necesitas</p>
 					</div>
 					<div class="flex_caption3 slide_banner_wrapper d-flex">
 						<a class="slide_banner slide1_banner1 captionDelay4 FromBottom"
@@ -56,8 +56,8 @@
 				<!-- CONTAINER -->
 				<div class="container">
 					<div class="flex_caption1">
-						<p class="title1 captionDelay2 FromTop">mega sell</p>
-						<p class="title2 captionDelay3 FromTop d-sm-none d-md-block">last week of sales</p>
+						<p class="title1 captionDelay2 FromTop">Full repuesto</p>
+						<p class="title2 captionDelay3 FromTop d-sm-none d-md-block">Nos ajustamos a tus necesidades</p>
 					</div>
 					<div class="flex_caption3 slide_banner_wrapper d-flex">
 						<a class="slide_banner slide1_banner3 captionDelay4 FromBottom"

@@ -63,37 +63,36 @@ Route::get('/{slug}/{id}/question/reply/{questionId}', 'ReplyController@index');
 Route::get('/isAdmin', 'MainController@isAdmin');
 
 Route::get('conversations', 'ConversationController@index');
-Route::post('conversations/{productName}', 'ConversationController@store');
-
 Route::get('conversations/{conversation}/users', 'ConversationController@participants');
-Route::post('conversations/{conversation}/users', 'ConversationController@join');
-Route::delete('conversations/{conversation}/users', 'ConversationController@leaveConversation');
-
 Route::get('conversations/{conversation}/messages', 'ConversationController@getMessages');
+
+Route::post('conversations/{productName}', 'ConversationController@store');
+Route::post('conversations/{conversation}/users', 'ConversationController@join');
 Route::post('conversations/{conversation}/messages', 'ConversationController@sendMessage');
+
+Route::delete('conversations/{conversation}/users', 'ConversationController@leaveConversation');
 Route::delete('conversations/{conversation}/messages', 'ConversationController@deleteMessages');
-
-
 
 Route::middleware('admin:user')
     ->prefix('/{slug}/{id}')
     ->group(function(){
-        Route::post('/question', 'QuestionController@store');
-        Route::put('/question/update', 'QuestionController@update');
-        Route::get('/question/delete/{questionId}', 'QuestionController@destroy');        
-        Route::post('/question/{questionId}/reply', 'ReplyController@store');
-        Route::put('/question/{questionId}/reply/update', 'ReplyController@update');
+        Route::get('/question/delete/{questionId}', 'QuestionController@destroy');
         Route::get('/question/{questionId}/reply/delete', 'ReplyController@destroy');
+        Route::post('/question', 'QuestionController@store');
+        Route::post('/question/{questionId}/reply', 'ReplyController@store');    
+        Route::put('/question/update', 'QuestionController@update');
+        Route::put('/question/{questionId}/reply/update', 'ReplyController@update');
     });
 
 
 Route::middleware('admin:user')
     ->group(function () {
         Route::get('cart', 'ShoppingController@index');
-        Route::post('cart/store', 'ShoppingController@storeItem');
+        
         Route::put('cart/update', 'ShoppingController@updateItem');
         Route::get('cart/remove/{id}', 'ShoppingController@removeItem');
         Route::get('/cart/delete', 'ShoppingController@delete');
+        Route::post('cart/store', 'ShoppingController@storeItem');
     });
 
 Route::middleware('admin:user')
@@ -153,16 +152,17 @@ Route::middleware('admin:admin')
         Route::any('orders/edit', 'BackendController@ordersEdit');
         Route::get('/admin', 'BackendController@dashboard');
         Route::get('roles', 'UsersController@role');
+        Route::get('/question', 'QuestionController@index'); 
+        Route::get('reply/{questionId}', 'ReplyController@indexBackend');
+        Route::get('/question/delete/{id}', 'QuestionController@destroy');
         Route::post('roles', 'UsersController@createRole');
         Route::get('subcategory', 'BackendController@category');
         Route::any('subcategory/edit', 'BackendController@CategoryEdit');
         Route::resource('users', 'UsersController');
         Route::get('articles/search', 'ArticlesController@search');
         Route::resource('articles', 'ArticlesController');
-        Route::get('/question', 'QuestionController@index');
-        Route::get('/question/delete/{id}', 'QuestionController@destroy');
         Route::post('reply/{questionId}', 'ReplyController@store');
-        Route::get('reply/{questionId}', 'ReplyController@indexBackend');
+       
 
 
     });

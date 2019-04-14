@@ -38,8 +38,8 @@ class SubmitProduct extends Request
         return [
             // 'color.required' => 'You must select a color',
             // 'size.required'  => 'You must select a size',
-            'qty.numeric'  => 'Quantity must be a number',
-            'qty.integer'  => 'Enter valid quantity',
+            'qty.numeric'  => 'La cantidad debe ser un número',
+            'qty.integer'  => 'Ingrese una cantidad válida',
             'qty.max'  => 'Max avalible quantity 20',
         ];
     }

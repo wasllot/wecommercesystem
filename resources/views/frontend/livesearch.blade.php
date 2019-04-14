@@ -43,10 +43,11 @@
                                 <div class="tovar_item_btns">
                                     <a class="open-project tovar_view"
                                        href="{{ url() }}/@{{row.category.cat}}/@{{row.slug}}/@{{row.product_id}}">
-                                        <span>@lang('site.product')</span> @lang('site.view')</a>
+                                        <span>@lang('site.product view')</span></a>
                                     <a class="add_bag" href="{{ url('login') }}"><i class="fa fa-shopping-cart"></i></a>
                                 </div>
                             </div>
+
                             <div class="tovar_description clearfix">
                                 <a class="tovar_title"
                                    href="{{ url() }}/@{{row.category.cat}}/@{{row.slug}}/@{{row.product_id}}">@{{row.name}}</a>

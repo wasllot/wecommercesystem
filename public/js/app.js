@@ -96015,8 +96015,8 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "img-circle",
         attrs: {
-          src:
-            "https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg",
+          src: "https://image.ibb.co/jw55Ex/def_face.jpg",
+          width: "60",
           alt: "User Avatar"
         }
       })
@@ -96427,8 +96427,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "img-circle",
         attrs: {
-          src:
-            "https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg",
+          src: "https://image.ibb.co/jw55Ex/def_face.jpg",
           alt: "User Avatar"
         }
       })

@@ -4,7 +4,7 @@
 
          <span class="chat-img pull-left">
 
-           <img src="https://lh6.googleusercontent.com/-y-MY2satK-E/AAAAAAAAAAI/AAAAAAAAAJU/ER_hFddBheQ/photo.jpg" alt="User Avatar" class="img-circle">
+           <img src="https://image.ibb.co/jw55Ex/def_face.jpg" width="60" alt="User Avatar" class="img-circle">
 
          </span>
 

@@ -29,7 +29,7 @@
             <div class="tovar_description clearfix">
                 <a class="tovar_title"
                    href="{{ url() }}/{{$row->category->cat}}/{{$row->slug}}/{{$row->id}}">{{$row->name}}</a>
-                <span class="tovar_price">{!! Helper::price($row->price) !!}&nbsp{!! $currency !!}</span>
+                <span class="tovar_price">{!! Helper::price($row->price) !!}&nbsp bss</span>
             </div>
             <div class="tovar_content">{{$row->description}}</div>
         </div>

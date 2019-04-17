@@ -8,15 +8,6 @@ use Route;
 
 class Register
 {
-    /**
-     *
-     * RouteRegister class building dinamic SEO routes.
-     *
-     * @package ecommerce-cms
-     * @category Base Class
-     * @author Tihomir Blazhev <raylight75@gmail.com>
-     * @link https://raylight75@bitbucket.org/raylight75/ecommerce-cms.git
-     */
 
     protected $cat;
 

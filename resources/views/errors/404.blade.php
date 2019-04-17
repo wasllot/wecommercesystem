@@ -59,8 +59,8 @@
 
                     <h2>ERROR</h2>
 
-                    <p>The page you are looking for does not exist. Return to the home page</p>
-                    <a class="btn btn-white" href="{{ url('cms') }}">Return to home page</a>
+                    <p>@lang('site.404 message')</p>
+                    <a class="btn btn-white" href="{{ url('cms') }}">@lang('site.back to home page')</a>
                 </div>
             </div>
             <!-- //CONTAINER -->

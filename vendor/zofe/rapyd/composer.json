@@ -1,0 +1,43 @@
+{
+    "name": "zofe/rapyd",
+    "description": "crud widgets for laravel, to make an admin in few lines of code",
+    "homepage": "https://github.com/zofe/rapyd-laravel",
+    "keywords": ["laravel", "crud", "rapyd", "administrator", "admin", "backend", "datatable", "form"],
+    "authors": [
+        {
+            "name": "zofe",
+            "email": "felice.ostuni@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "illuminate/support": "~5.6",
+        "laravelcollective/html": "~5.6",
+        "intervention/image": "2.4.2",
+        "zofe/burp": "2.*"
+    },
+    "suggest": {
+        "baum/baum": "Allows to use the DataTree widget"
+    },
+    "autoload": {
+        "classmap": [
+            "migrations"
+        ],
+        "psr-4": {
+            "Zofe\\Rapyd\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zofe\\Rapyd\\RapydServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "laravel/framework": "5.6.*",
+        "orchestra/testbench": "3.6.*",
+        "phpunit/phpunit": "7.*",
+        "php-coveralls/php-coveralls": "^1.0"
+    }
+}

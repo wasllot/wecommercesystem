@@ -10,39 +10,6 @@ use Socialite, Exception;
 class SocialAuthController extends Controller
 {
 
-    /**
-     * Ecommerce-CMS
-     *
-     * Copyright (C) 2014 - 2015  Tihomir Blazhev.
-     *
-     * LICENSE
-     *
-     * Ecommerce-cms is released with dual licensing, using the GPL v3 (license-gpl3.txt) and the MIT license (license-mit.txt).
-     * You don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using.
-     * Please see the corresponding license file for details of these licenses.
-     * You are free to use, modify and distribute this software, but all copyright information must remain.
-     *
-     * @package     ecommerce-cms
-     * @copyright   Copyright (c) 2014 through 2015, Tihomir Blazhev
-     * @license     http://opensource.org/licenses/MIT  MIT License
-     * @version     1.0.0
-     * @author      Tihomir Blazhev <raylight75@gmail.com>
-     */
-
-    /**
-     *
-     * Social Auth Class
-     *
-     * @package ecommerce-cms
-     * @category main Class
-     * @author Tihomir Blazhev <raylight75@gmail.com>
-     * @link https://raylight75@bitbucket.org/raylight75/ecommerce-cms.git
-     */
-
-    /**
-     * @param $provider
-     * @return $this|\Illuminate\Http\RedirectResponse
-     */
     public function redirectToProvider($provider)
     {
         try {
@@ -74,7 +41,7 @@ class SocialAuthController extends Controller
             auth()->login($user);
             return redirect()->to('/home');
         }
-        return $this->sendFailedResponse("These credentials do not match our records.");
+        return $this->sendFailedResponse("Los datos no coinciden con nuestras credenciales");
     }
 
     /**
@@ -84,6 +51,6 @@ class SocialAuthController extends Controller
     protected function sendFailedResponse($msg = null)
     {
         return redirect()->route('login')
-            ->withErrors(['msg' => $msg ?: 'Unable to login, try with another provider to login.']);
+            ->withErrors(['msg' => $msg ?: 'No se puede iniciar sesión, intenta con otra opción.']);
     }
 }

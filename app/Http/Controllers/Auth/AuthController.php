@@ -31,7 +31,7 @@ class AuthController extends Controller
      *
      * @return void
      */
-    protected $redirectPath = '/cms';
+    protected $redirectPath = '/fullrepuesto';
 
     public function __construct()
     {

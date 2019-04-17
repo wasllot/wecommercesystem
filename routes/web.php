@@ -38,7 +38,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/aboutus', 'MainController@aboutus');
 
-Route::get('/cms', 'MainController@index');
+Route::get('/fullrepuesto', 'MainController@index');
 
 Route::get('/contacts', 'MainController@contacts');
 
@@ -47,6 +47,8 @@ Route::get('/welcome', 'MainController@welcome');
 Route::get('user/activation/{token}', 'Auth\LoginController@userActivation');
 
 Route::get('/frame/{id}', 'MainController@frame');
+
+Route::get('/search', 'MainController@mainSearch'); 
 
 Route::get('items/search/{id}', 'MainController@search');
 
@@ -58,8 +60,6 @@ Route::get('/roles', 'MainController@getRoles');
 
 Route::get('/{slug}/{id}/question', 'QuestionController@index');
 Route::get('/{slug}/{id}/question/reply/{questionId}', 'ReplyController@index');
-
-
 Route::get('/isAdmin', 'MainController@isAdmin');
 
 Route::get('conversations', 'ConversationController@index');

@@ -14,7 +14,7 @@
         </h3> -->
 
         <div class="pull-right">
-            <a class="py-2" href="{{ url('cms') }}"><?= _('Volver')?><i class="fa fa-angle-right"></i></a>
+            <a class="py-2" href="{{ url('fullrepuesto') }}">@lang('site.back')<i class="fa fa-angle-right"></i></a>
         </div>
     </div>
     <!-- //CONTAINER -->
@@ -82,7 +82,7 @@
                                     <a href="{{ url('/') }}/{{$item->name}}/{{$item->id}}">{{$item->name}}</a>
                                 </td>
                                 <td class="product-price">
-                                    {!! Helper::price($item->price) !!}&nbsp{!! $currency !!}
+                                    {!! Helper::price($item->price) !!}&nbsp bss
                                 </td>
                                 <td>
                                     {!! Form::open(['url' => 'cart/update', 'method' => 'put']) !!}
@@ -91,7 +91,7 @@
                                         ['size' => '1','style' => 'text-align: center','maxlength' => '3']) !!}
                                 </td>
                                 <td class="product-subtotal">
-                                    {!! Helper::price($item->subtotal) !!}&nbsp{!! $currency !!}
+                                    {!! Helper::price($item->subtotal) !!}&nbsp bss
                                 </td>
                                 <td class="product-remove">
                                     <a href="{{ url('cart/remove') }}/{{$item->rowId}}">
@@ -119,7 +119,7 @@
                         <tr class="total clearfix">
                             <th><?= _('Total')?></th>
                             @if ($cart)
-                                <td>{!! Helper::price($grand_total) !!}&nbsp{!! $currency !!}</td>
+                                <td>{!! Helper::price($grand_total) !!}&nbsp bss</td>
                             @endif
                         </tr>
                     </table>

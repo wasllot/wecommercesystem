@@ -74,7 +74,7 @@ class ConversationController extends Controller
     {
         $participants = Chat::conversations()->getById($conversationId)->users;
 
-        error_log(response($participants)); 
+        // error_log(response($participants)); 
 
         return response($participants);
     }
@@ -115,7 +115,8 @@ class ConversationController extends Controller
                   ->to($conversation)
                   ->send();
 
-      // return response($message);
-        broadcast(new MessageSentEvent($user, $message))->toOthers();
+      return response($message);
+        // $user = auth()->user();
+        // broadcast(new MessageSentEvent($user, $message))->toOthers();
     }
 }

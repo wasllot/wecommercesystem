@@ -39,6 +39,7 @@ return [
     'share' => 'Share item with friends',
     'products' => 'Products',
     'product' => 'Product',
+    'rate the product' => 'Rate the product',
     'view' => 'view',
     'quick view' => 'quick view',
     'logout' => 'logout',
@@ -58,4 +59,13 @@ return [
     'by name' => 'SORT BY NAME',
     'by cats' => 'SHOP BY CATEGORIES',
     'lng' => 'Language',
+    'product view' => 'Product view',
+    'about title' => 'In Fullrepuesto.com, you will find spare parts for almost all brands of cars',
+    'about p1' => 'Fullrepuesto.com is a company dedicated to the online selling of the most popular brands of spare parts. We offer online sales, fast deliveries and good services. ',
+    'about p2' => 'If the product you need is not in our catalog, you should only contact us through "consultas@fullrepuesto.com" with information such as: Brand, Model, and Year of your vehicle, the description and reference of the piece and then, we will find the product.',
+    'back' => 'Back',
+    'back to home page' => 'Volver a la página de inicio',
+    '404 message' => 'The page you are looking for does not exist. Return to the home page',
+    'category' => 'Category',
+    'introduce product' => 'Introduce the product you are looking for'
 ];

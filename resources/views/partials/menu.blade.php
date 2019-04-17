@@ -1,6 +1,7 @@
 <!--MENU -->
 <ul class="nav-menu center" >
-    <li class="normal menu"><a href="{{ url('cms') }}">@lang('site.home')</a>
+
+    <li class="normal menu"><a href="{{ url('fullrepuesto') }}">@lang('site.home')</a>
         <!-- MEGA MENU -->
     </li>
     <!-- //MEGA MENU -->

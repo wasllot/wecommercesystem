@@ -44,3 +44,4 @@ jQuery(window).on('load', function () {
   setTimeout("jQuery('.preloader_hide, .selector_open').animate({'opacity' : '1'},500)",800);
 
 });
+

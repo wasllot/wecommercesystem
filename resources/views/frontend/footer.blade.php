@@ -9,10 +9,10 @@
 			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 col-ss-12 padbot30">
 				<h4>@lang('site.contacts')</h4>
 				<div class="foot_address">
-					<span>Full Repuesto</span>55 Ney York 6515, Grand Tower
+					<span>Full Repuesto</span>Av. Daniel Camejo Octavio
 				</div>
 				<div class="foot_phone">
-					<a href="tel:1 800 888 2828">1 800 888 2828</a>
+					<a href="tel:1 800 888 2828">+58 500 00 00</a>
 				</div>
 				<div class="foot_mail">
 					<a href="mailto:info@glamyshop.com">fullrepuestosve@gmail.com</a>
@@ -22,11 +22,8 @@
 			<div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 col-ss-12 padbot30">
 				<h4>@lang('site.information')</h4>
 				<ul class="foot_menu">
+					<li><a href="/cms">@lang('site.home')</a></li>
 					<li><a href="about.html">@lang('site.about us')</a></li>
-					<li><a href="javascript:void(0);">@lang('site.delivery')</a></li>
-					<li><a href="javascript:void(0);">@lang('site.privacy')</a></li>
-					<li><a href="blog.html">@lang('site.blog')</a></li>
-					<li><a href="faq.html">@lang('site.faqs')</a></li>
 					<li><a href="contacts.html">@lang('site.contacts')</a></li>
 				</ul>
 			</div>
@@ -35,35 +32,18 @@
 
 			<div class="col-lg-4 col-md-4 col-sm-6 padbot30">
 				<h4>@lang('site.about shop')</h4>
-				<p>We ask for your name, telephone number, home address, email
-					address and age for competitions, prize draws or newsletter sign
-					ups. When a purchase is made on our site, in addition to the above,
-					we also ask for delivery address, and payment method details.</p>
-				<p>We may obtain information about your usage of our website to help
-					us develop and improve it further through online surveys and other
-					requests.</p>
+				<p>@lang('site.about title')</p>
+				<b>@lang('site.about p1')</b>
 			</div>
 
 			<div class="respond_clear_768"></div>
 
 			<div class="col-lg-4 col-md-4 padbot30">
-				<h4>@lang('site.newsletter')</h4>
-				<form class="newsletter_form clearfix" action="javascript:void(0);"
-					method="get">
-					<input type="text" name="newsletter"
-						value="Buscar producto"
-						onFocus="if (this.value == 'Enter E-mail & Get 10% off') this.value = '';"
-						onBlur="if (this.value == '') this.value = 'Enter E-mail & Get 10% off';" />
-					<input class="btn newsletter_btn" type="submit" value="Buscar">
-				</form>
 
 				<h4>@lang('site.social')</h4>
 				<div class="social">
 					<a href="javascript:void(0);"><i class="fa fa-twitter"></i></a> <a
-						href="javascript:void(0);"><i class="fa fa-facebook"></i></a> <a
-						href="javascript:void(0);"><i class="fa fa-google-plus"></i></a> <a
-						href="javascript:void(0);"><i class="fa fa-pinterest-square"></i></a>
-					<a href="javascript:void(0);"><i class="fa fa-tumblr"></i></a> <a
+						href="javascript:void(0);"><i class="fa fa-facebook"></i></a><a
 						href="javascript:void(0);"><i class="fa fa-instagram"></i></a>
 				</div>
 			</div>

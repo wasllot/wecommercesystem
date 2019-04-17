@@ -90,7 +90,19 @@ return [
     'go to previous step' => 'Volver al paso anterior',
     'billing information' => 'Información de factura',
     'continue shopping' => 'Continuar comprando',
-    'back to shopping bag' => 'volver al carrito'
+    'back to shopping bag' => 'volver al carrito',
+    'contact address' => 'Dirección de contacto',
+    'rate the product' => 'Califica el producto',
+    'shippings' => 'ventas',
+    'claims' => 'Reclamos',
+    'add to bag' => 'Añadir al carrito',
+    'about title' => 'En Fullrepuesto.com, encontrarás repuestos para casi todas las marcas de autos',
+    'about p1' => 'Fullrepuesto.com es una empresa dedicada a la venta en línea de las marcas de repuestos más populares. Ofrecemos ventas online, entregas rápidas y buenos servicios.',
+    'about p2' => 'Si el producto que necesita no está en nuestro catálogo, solo deberá ponerse en contactos a través consultas@fullrepuesto.com con datos como: Marca, Modelo, Cilindraje y Año de su vehículo, la descripción y referencia de la pieza y nosotros encontraremos el producto. ',
+    'home' => 'Inicio',
+    '404 message' => 'La página que estás buscando no existe. Vuelve a la página principal',
+    'category' => 'Categoría',
+    'introduce product' => 'Ingrese el producto que está buscano'
 
 
     

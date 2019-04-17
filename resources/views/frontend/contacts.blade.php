@@ -6,16 +6,16 @@
 
 
 <!-- PAGE HEADER -->
-<section class="page_header">
+<section class="page_header py-4">
 
 	<!-- CONTAINER -->
 	<div class="container">
-		<h3 class="pull-left">
-			<b><?= _('Contacts')?></b>
+		<h3 class="pull-left py-2">
+			<b>@lang('site.contacts')</b>
 		</h3>
 
-		<div class="pull-right">
-			<a href="women.html"><?= _('Back to shop')?><i class="fa fa-angle-right"></i></a>
+		<div class="pull-right py-2">
+			<a href="/">@lang('site.back')<i class="fa fa-angle-right"></i></a>
 		</div>
 	</div>
 	<!-- //CONTAINER -->
@@ -31,10 +31,10 @@
 
 		<!-- ROW -->
 		<div class="row padbot30">
-			<div class="col-lg-6 col-md-6 padbot30">
+			<div class="col-lg-8 col-md-8 padbot30">
 				<div id="map">
 					<iframe height="490"
-						src="http://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=New+York&amp;sll=49.891235,-97.15369&amp;sspn=47.259509,86.923828&amp;ie=UTF8&amp;hq=&amp;hnear=New+York,+United+States&amp;ll=40.714867,-74.005537&amp;spn=0.019517,0.018797&amp;z=14&amp;iwloc=near&amp;output=embed"></iframe>
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15707.475692867787!2d-64.6932407242923!3d10.19129853773612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2d736754808be5%3A0x2fe867b57d7d6659!2zTGVjaGVyw61hLCBBbnpvw6F0ZWd1aQ!5e0!3m2!1ses-419!2sve!4v1555256335231!5m2!1ses-419!2sve" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
 			</div>
 
@@ -42,33 +42,32 @@
 				<ul class="contact_info_block">
 					<li>
 						<h3>
-							<i class="fa fa-map-marker"></i><b><?= _('Store locations')?></b>
+							<i class="fa fa-map-marker"></i><b>@lang('site.contact address')</b>
 						</h3>
-						<p>Glammy Store</p> <span>000, Country, Streer name 55, US</span>
+						<p>Full repuesto,</p> <span> Av. Daniel Camejo Octavio </span>
 					</li>
 					<li>
 						<h3>
-							<i class="fa fa-phone"></i><b><?= _('Phones')?></b>
+							<i class="fa fa-phone"></i><b>@lang('site.phone')s</b>
 						</h3>
-						<p class="phone">(+44) 800 456 7890</p>
-						<p class="phone">(+55) 800 456 7890</p>
+						<p class="phone">(+58) 400 00 00</p>
+						<p class="phone">(+58) 500 00 00</p>
 					</li>
 					<li>
 						<h3>
-							<i class="fa fa-envelope"></i><b>E-mail</b>
+							<i class="fa fa-envelope"></i><b>@lang('site.email')s</b>
 						</h3>
-						<p><?= _('Advertising')?></p> <a href="mailto:adv@glammyshop.com">adv@glammyshop.com</a>
+						<p>@lang('site.shippings')</p> <a href="mailto:adv@glammyshop.com">consultas@fullrepuesto.com</a>
 
-						<p><?= _('Partnership')?></p> <a href="mailto:partner@glammyshop.com">partner@glammyshop.com</a>
+						<p>@lang('site.claims')</p> <a href="mailto:partner@glammyshop.com">reclamos@fullrepuesto.com</a>
 
-						<p><?= _('Returns and Refunds')?></p> <a href="mailto:return@glammyshop.com">return@glammyshop.com</a>
 					</li>
 				</ul>
 			</div>
 
-			<div class="col-lg-3 col-md-3 col-sm-6 padbot30">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-6 padbot30"> -->
 				<!-- CONTACT FORM -->
-				<div class="contact_form">
+<!-- 				<div class="contact_form">
 					<h3>
 						<b><?= _('Contacts form')?></b>
 					</h3>
@@ -84,9 +83,9 @@
 							<br> <input class="btn active" type="submit" value="Send Message" />
 						</form>
 					</div>
-				</div>
+				</div> -->
 				<!-- //CONTACT FORM -->
-			</div>
+			<!-- </div> -->
 		</div>
 		<!-- //ROW -->
 	</div>

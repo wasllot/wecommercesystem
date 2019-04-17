@@ -27,7 +27,7 @@ class Helper
         }
 
         $total = (double)$input * (double)$rate;
-        error_log(number_format((double)$total, 2)); 
+        
         return number_format((double)$total, 2);
     }
 

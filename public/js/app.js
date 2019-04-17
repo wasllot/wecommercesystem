@@ -93756,7 +93756,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -93802,6 +93802,12 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__question__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__question___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__question__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -94163,7 +94169,7 @@ var render = function() {
                 _c("h5", [_vm._v(_vm._s(_vm.data.body))]),
                 _vm._v(" "),
                 _c("p", [
-                  _vm.data.user_id == _vm.user.id
+                  _vm.user && _vm.data.user_id == _vm.user.id
                     ? _c(
                         "a",
                         {
@@ -94292,12 +94298,26 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "pt-4" },
-      [_c("create", { attrs: { product: _vm.product, user: _vm.user } })],
-      1
-    )
+    _vm.user
+      ? _c(
+          "div",
+          { staticClass: "py-4 my-2" },
+          [_c("create", { attrs: { product: _vm.product, user: _vm.user } })],
+          1
+        )
+      : _c(
+          "div",
+          {
+            staticClass:
+              "pt-4 container bg-info d-flex align-items-center justify-content-center",
+            staticStyle: { height: "20%" }
+          },
+          [
+            _c("h2", { staticClass: "text-white" }, [
+              _vm._v("¡Inicia sesión para interactuar!")
+            ])
+          ]
+        )
   ])
 }
 var staticRenderFns = []
@@ -94718,6 +94738,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -94727,15 +94767,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             errors: {},
             messages: {},
-            questions: {}
+            questions: {},
+            search: ''
         };
+    },
+
+    computed: {
+        questionsFiltered: function questionsFiltered() {
+            var _this = this;
+
+            return this.questions.filter(function (question) {
+                return question.slug.toLowerCase().includes(_this.search.toLowerCase()) || question.title.toLowerCase().includes(_this.search.toLowerCase());
+            });
+        }
     },
     mounted: function mounted() {},
     created: function created() {
-        var _this = this;
+        var _this2 = this;
 
         axios.get('/backend/question').then(function (res) {
-            return _this.questions = res.data.data;
+            return _this2.questions = res.data.data;
         }).catch(function (error) {
             return console.log(error.response.data);
         });
@@ -95513,11 +95564,41 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12 p-4 " }, [
+        _c("div", { attrs: { id: "custom-search-input" } }, [
+          _c("div", { staticClass: "input-group col-md-12" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "search-query form-control",
+              attrs: { type: "text", placeholder: "slug o titulo" },
+              domProps: { value: _vm.search },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.search = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
         _vm.questions
           ? _c(
               "div",
-              _vm._l(_vm.questions, function(question, index) {
+              _vm._l(_vm.questionsFiltered, function(question, index) {
                 return _c("sentence", { key: index, attrs: { data: question } })
               }),
               1
@@ -95538,7 +95619,18 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "btn btn-danger", attrs: { type: "button" } },
+      [_c("span", { staticClass: " glyphicon glyphicon-search" })]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -95736,14 +95828,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: { chatConversationsList: __WEBPACK_IMPORTED_MODULE_0__ChatConversationsList___default.a },
+  props: ['user'],
   data: function data() {
     return {
       conversation: null,
-      conversations: []
+      conversations: [],
+      search: ''
     };
   },
+  computed: {
+    conversationsFiltered: function conversationsFiltered() {
+      var _this = this;
 
-  props: ['user'],
+      return this.conversations.filter(function (conversation) {
+        return conversation.data.toLowerCase().includes(_this.search.toLowerCase());
+      });
+    }
+  },
   mounted: function mounted() {
     this.fetchConversations();
   },
@@ -95757,10 +95858,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // },
 
     fetchConversations: function fetchConversations() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("/conversations").then(function (response) {
-        _this.conversations = response.data;
+        _this2.conversations = response.data;
         console.log(response.data);
       });
     },
@@ -96042,7 +96143,33 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "row" }, [
-      _vm._m(0),
+      _c("div", { attrs: { id: "custom-search-input" } }, [
+        _c("div", { staticClass: "input-group col-md-12" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.search,
+                expression: "search"
+              }
+            ],
+            staticClass: "search-query form-control",
+            attrs: { type: "text", placeholder: "Conversation" },
+            domProps: { value: _vm.search },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.search = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ]),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
@@ -96050,7 +96177,7 @@ var render = function() {
         _c(
           "ul",
           { staticClass: "list-unstyled" },
-          _vm._l(_vm.conversations, function(convo, index) {
+          _vm._l(_vm.conversationsFiltered, function(convo, index) {
             return _c("chatConversationsList", {
               key: index,
               attrs: { conversation: convo, user: _vm.user }
@@ -96067,20 +96194,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "custom-search-input" } }, [
-      _c("div", { staticClass: "input-group col-md-12" }, [
-        _c("input", {
-          staticClass: "  search-query form-control",
-          attrs: { type: "text", placeholder: "Conversation" }
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-danger", attrs: { type: "button" } },
-          [_c("span", { staticClass: " glyphicon glyphicon-search" })]
-        )
-      ])
-    ])
+    return _c(
+      "button",
+      { staticClass: "btn btn-danger", attrs: { type: "button" } },
+      [_c("span", { staticClass: " glyphicon glyphicon-search" })]
+    )
   }
 ]
 render._withStripped = true
@@ -96180,37 +96298,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
   components: { chatConversationsListOrder: __WEBPACK_IMPORTED_MODULE_0__ChatConversationListOrder___default.a },
+  props: ['user'],
   data: function data() {
     return {
+
       conversation: null,
-      conversations: []
+      conversations: [],
+      search: ''
+
     };
   },
+  computed: {
+    conversationsFiltered: function conversationsFiltered() {
+      var _this = this;
 
-  props: ['user'],
+      return this.conversations.filter(function (conversation) {
+
+        return conversation.data.toLowerCase().includes(_this.search.toLowerCase());
+      });
+    }
+  },
   mounted: function mounted() {
+
     this.fetchConversations();
   },
 
 
   methods: {
-    // createConversation() {
-    //   axios.post("/conversations").then(response => {
-    //     location.reload();
-    //   });
-    // },
-
     fetchConversations: function fetchConversations() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("/backend/conversationsUser").then(function (response) {
-        _this.conversations = response.data;
+        _this2.conversations = response.data;
         console.log(response.data);
       });
     },
@@ -96233,10 +96360,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   }
 
-  // created() {
-  //   this.fetchConversations();
-
-  // }
 });
 
 /***/ }),
@@ -96428,6 +96551,7 @@ var staticRenderFns = [
         staticClass: "img-circle",
         attrs: {
           src: "https://image.ibb.co/jw55Ex/def_face.jpg",
+          width: "60",
           alt: "User Avatar"
         }
       })
@@ -96453,7 +96577,38 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "row" }, [
-      _vm._m(0),
+      _c(
+        "div",
+        {
+          staticClass: "chat-bottom-bar",
+          attrs: { id: "custom-search-input" }
+        },
+        [
+          _c("div", { staticClass: "input-group col-md-12" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "  search-query form-control",
+              attrs: { type: "text", placeholder: "Buscar conversación" },
+              domProps: { value: _vm.search },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.search = $event.target.value
+                }
+              }
+            })
+          ])
+        ]
+      ),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
@@ -96461,7 +96616,7 @@ var render = function() {
         _c(
           "ul",
           { staticClass: "list-unstyled" },
-          _vm._l(_vm.conversations, function(convo, index) {
+          _vm._l(_vm.conversationsFiltered, function(convo, index) {
             return _c("chatConversationsListOrder", {
               key: index,
               attrs: { conversation: convo, user: _vm.user }
@@ -96473,21 +96628,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "custom-search-input chat-bottom-bar" } }, [
-      _c("div", { staticClass: "input-group col-md-12" }, [
-        _c("input", {
-          staticClass: "  search-query form-control",
-          attrs: { type: "text", placeholder: "Buscar conversación" }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -96776,15 +96917,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["user", "conversation"],
@@ -96802,6 +96934,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     joinConversation: function joinConversation() {
       axios.post("/conversations/" + this.conversation + "/users").then(function (response) {
+
         location.reload();
       });
     },
@@ -96809,11 +96942,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       axios.post("/conversations/" + this.conversation + "/messages", {
+
         message: this.newMessage
+
       }).then(function (response) {
+
         _this.newMessage = "";
-        location.reload(); // comment this out if you are broadcasting
+        window.location.href = "user-messages?conversation_id=" + _this.conversation;
       });
+
+      // location.reload();
+      // window.location.href = "user-messages?conversation_id=" + this.conversation;
+
     }
   }
 
@@ -96828,66 +96968,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "form",
-      {
-        staticStyle: { display: "inherit" },
-        attrs: { method: "post", encrypt: "multipart/form-data" }
-      },
-      [
-        _c("div", { staticClass: "input-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.newMessage,
-                expression: "newMessage"
-              }
-            ],
-            staticClass: "form-control input-sm chat-input",
-            attrs: {
-              id: "btn-input",
-              type: "text",
-              name: "message",
-              placeholder: "Ingresa tu mensaje..."
-            },
-            domProps: { value: _vm.newMessage },
-            on: {
-              keyup: function($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                ) {
-                  return null
-                }
-                return _vm.sendMessage($event)
-              },
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.newMessage = $event.target.value
-              }
+    _c("form", { staticStyle: { display: "inherit" } }, [
+      _c("div", { staticClass: "input-group" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.newMessage,
+              expression: "newMessage"
             }
-          }),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c("span", { staticClass: "input-group-btn" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-sm chat-submit-button",
-                attrs: { id: "send" },
-                on: { click: _vm.sendMessage }
-              },
-              [_c("i", { staticClass: "glyphicon glyphicon-send" })]
-            )
-          ])
+          ],
+          staticClass: "form-control input-sm chat-input",
+          attrs: {
+            id: "btn-input",
+            type: "text",
+            name: "message",
+            placeholder: "Ingresa tu mensaje...",
+            required: ""
+          },
+          domProps: { value: _vm.newMessage },
+          on: {
+            keyup: function($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.sendMessage($event)
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.newMessage = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("span", { staticClass: "input-group-btn" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-sm chat-submit-button",
+              attrs: { disabled: _vm.disabled },
+              on: { click: _vm.sendMessage }
+            },
+            [_c("i", { staticClass: "glyphicon glyphicon-send" })]
+          )
         ])
-      ]
-    )
+      ])
+    ])
   ])
 }
 var staticRenderFns = [

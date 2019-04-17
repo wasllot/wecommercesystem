@@ -6,16 +6,16 @@
 
 
     <!-- PAGE HEADER -->
-    <section class="page_header">
+    <section class="page_header py-4">
 
         <!-- CONTAINER -->
-        <div class="container">
-            <h3 class="pull-left">
-                <b>About us</b>
+        <div class="container ">
+            <h3 class="pull-left py-2">
+                <b>@lang('site.about us')</b>
             </h3>
 
-            <div class="pull-right">
-                <a href="women.html">Back to shop<i class="fa fa-angle-right"></i></a>
+            <div class="pull-right py-2">
+                <a href="/">@lang('site.back')<i class="fa fa-angle-right"></i></a>
             </div>
         </div>
         <!-- //CONTAINER -->
@@ -34,18 +34,18 @@
         <!-- //ROW -->
 
             <!-- ROW -->
-            <div class="row services_wrapper padbot40"
+<!--             <div class="row services_wrapper padbot40"
                  data-appear-top-offset='-100' data-animated='fadeInUp'>
                 @component('partials/about')Responsive Theme @endcomponent
                 @component('partials/about')Free Support @endcomponent
                 @component('partials/about')Retina Ready @endcomponent
                 @component('partials/about')Easy Customize @endcomponent
-            </div>
+            </div> -->
             <!-- //ROW -->
 
 
             <!-- ROW -->
-            <div class="row team_wrapper padbot60" data-appear-top-offset='-100'
+<!--             <div class="row team_wrapper padbot60" data-appear-top-offset='-100'
                  data-animated='fadeInUp'>
 
                 @component('partials/team')
@@ -72,7 +72,7 @@
                 @slot('position')Marketing @endslot
                 @endcomponent
 
-            </div>
+            </div> -->
             <!-- //ROW -->
         </div>
         <!-- //CONTAINER -->

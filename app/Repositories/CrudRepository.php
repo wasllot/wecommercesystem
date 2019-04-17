@@ -319,7 +319,6 @@ class CrudRepository
         // $grid->add('color', 'Color');
         $grid->add('quantity', 'Cantidad', true);
         $grid->add('amount', 'Monto', true);
-        $grid->add('<a href="/backend/orders/chat/{{users.id}}/" class="text-success" style="font-size: 2rem; color: green; align-items: center; "><span class="glyphicon glyphicon-inbox"><sup style="padding-right: 5px; padding-left: 5px;">45</sup></span></a>', 'Mensajería');
         $grid->edit('/backend/orders/edit');
         // $grid->link('/backend/orders/edit', "Nueva orden", "TR");
         $grid->orderBy('id', 'asc');
@@ -374,7 +373,6 @@ class CrudRepository
         // $grid->add('color', 'Color');
         $grid->add('quantity', 'Cantidad');
         $grid->add('amount', 'Monto');
-        $grid->add('<a href="/backend/orders/chat/{{users.id}}/" class="text-success" style="font-size: 2rem; color: green; align-items: center; "><span class="glyphicon glyphicon-inbox"><sup style="padding-right: 5px; padding-left: 5px;">45</sup></span></a>', 'Mensajería');
         $grid->edit('/backend/user-orders/edit', 'Orden actual', 'show');
         $grid->orderBy('id', 'asc');
         $grid->paginate(10);

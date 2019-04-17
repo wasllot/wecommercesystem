@@ -150,7 +150,7 @@ class PaymentController extends Controller
     {
         // Curse and humiliate the user for cancelling this most sacred payment (yours)
         $executePayment = null;
-        return redirect('/cms');
+        return redirect('/fullrepuesto');
     }
 
     /**

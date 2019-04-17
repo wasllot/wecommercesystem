@@ -2,11 +2,12 @@
   <div>
 
        <div class="row">
-            <div id="custom-search-input chat-bottom-bar">
+
+            <div id="custom-search-input" class="chat-bottom-bar">
 
                <div class="input-group col-md-12">
 
-                  <input type="text" class="  search-query form-control" placeholder="Buscar conversación" />
+                  <input type="text" class="  search-query form-control" placeholder="Buscar conversación" v-model="search" />
 
                </div>
 
@@ -18,7 +19,7 @@
 
               <ul class="list-unstyled">
 
-                <chatConversationsListOrder v-for="(convo, index) in conversations" :key="index" :conversation=convo :user=user></chatConversationsListOrder>
+                <chatConversationsListOrder v-for="(convo, index) in conversationsFiltered" :key="index" :conversation=convo :user=user></chatConversationsListOrder>
 
               </ul>
 
@@ -36,23 +37,32 @@
 import chatConversationsListOrder from './ChatConversationListOrder'
 
 export default {
-  components: {chatConversationsListOrder},
-  data: () => ({
-    conversation: null,
-    conversations: []
-  }),
 
+  components: {chatConversationsListOrder},
   props: ['user'],
+  data: () => ({
+
+    conversation: null,
+    conversations: [],
+    search: ''
+
+  }),
+  computed: {
+    conversationsFiltered(){
+
+      return this.conversations.filter(conversation => {
+
+        return conversation.data.toLowerCase().includes(this.search.toLowerCase())
+
+      })
+    }
+  },
   mounted(){
+
     this.fetchConversations();
   },
 
   methods: {
-    // createConversation() {
-    //   axios.post("/conversations").then(response => {
-    //     location.reload();
-    //   });
-    // },
 
     fetchConversations() {
       axios.get("/backend/conversationsUser").then(response => {
@@ -83,9 +93,5 @@ export default {
     }
   },
 
-  // created() {
-  //   this.fetchConversations();
- 
-  // }
 };
 </script>

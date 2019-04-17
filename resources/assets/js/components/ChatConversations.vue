@@ -6,7 +6,7 @@
 
                <div class="input-group col-md-12">
 
-                  <input type="text" class="  search-query form-control" placeholder="Conversation" />
+                  <input type="text" class="search-query form-control" v-model="search" placeholder="Conversation" />
 
                   <button class="btn btn-danger" type="button">
 
@@ -24,7 +24,7 @@
 
               <ul class="list-unstyled">
 
-                <chatConversationsList v-for="(convo, index) in conversations" :key="index" :conversation=convo :user=user></chatConversationsList>
+                <chatConversationsList v-for="(convo, index) in conversationsFiltered" :key="index" :conversation=convo :user=user></chatConversationsList>
 
               </ul>
 
@@ -43,12 +43,19 @@ import chatConversationsList from './ChatConversationsList'
 
 export default {
   components: {chatConversationsList},
+  props: ['user'],
   data: () => ({
     conversation: null,
-    conversations: []
+    conversations: [],
+    search: ''
   }),
-
-  props: ['user'],
+  computed: {
+    conversationsFiltered(){
+      return this.conversations.filter(conversation => {
+        return conversation.data.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
+  },
   mounted(){
     this.fetchConversations(); 
   },

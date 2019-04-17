@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/cms';
+    protected $redirectTo = '/fullrepuesto';
 
     protected $user;
 
@@ -53,7 +53,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $this->performLogout($request);
-        return redirect('/cms');
+        return redirect('/fullrepuesto');
     }
 
     /**
@@ -69,9 +69,10 @@ class LoginController extends Controller
                 return back()->with('warning', "Por favor, primero activa tu cuenta.");
             }
             $this->user->attachRole(auth()->user());
-            return redirect()->to('/cms');
+            return redirect()->to('/fullrepuesto');
         } else {
-            return back()->with('error', 'Your username or password are wrong.');
+            
+            return back()->with('error', 'Tu contraseña o usuario son incorrectos');
         }
     }
 

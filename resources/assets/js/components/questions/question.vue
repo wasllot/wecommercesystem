@@ -16,7 +16,7 @@
                    <div class="clearfix"></div>
                     <h5>{{data.body}}</h5>
                     <p>                   
-                        <a class="float-right btn btn-outline-primary ml-2" @click="deleteQuestion()" v-if="data.user_id == user.id"> <i class="fa fa-trash"></i> Eliminar</a>
+                        <a class="float-right btn btn-outline-primary ml-2" @click="deleteQuestion()" v-if="user && data.user_id == user.id"> <i class="fa fa-trash"></i> Eliminar</a>
                    </p>
                 </div>
             </div>

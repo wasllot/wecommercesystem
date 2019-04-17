@@ -11,8 +11,14 @@
       </div>
     </div>
     
-    <div class="pt-4">
+    <div class="py-4 my-2" v-if="user">
         <create :product=product :user=user></create>
+    </div>
+
+    <div class="pt-4 container bg-info d-flex align-items-center justify-content-center" style="height: 20%;" v-else>
+  
+        <h2 class="text-white">¡Inicia sesión para interactuar!</h2>
+      
     </div>
 
   </div>

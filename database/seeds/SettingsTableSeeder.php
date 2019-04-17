@@ -20,9 +20,9 @@ class SettingsTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'title' => 'EShop eCommerce CMS',
-                'keyword' => 'CMS, eCommerce, Bootstrap,Template, Theme, Responsive, Fluid, Retina',
-                'description' => 'EShop eCommerce CMS',
+                'title' => 'Full repuesto',
+                'keyword' => 'CMS, Car, Cars, Repuesto, Wasllot, Ruedas, Neumáticos, Aceite, Motor, Carro, Carros, tienda, online, eCommerce, Bootstrap,Template, Responsive, Fluid, Retina',
+                'description' => 'Un sistema de ventas desarrollado en Laravel',
             ),
         ));
         

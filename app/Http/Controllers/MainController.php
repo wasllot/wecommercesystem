@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\MainService;
 use App\Http\Resources\RoleResource;
 use Illuminate\Support\Facades\DB;
+use App\Models\Category;
 
 class MainController extends Controller
 {
@@ -118,6 +119,36 @@ class MainController extends Controller
         } else {
             return view('frontend.filter_view', $data);
         }
+    }    
+
+    public function mainSearch()
+    {
+        $childId = request()->input('child');
+
+        if(!$childId){
+
+            // $data = $this->main->getHome();
+
+            session()->flash('flash_message', '¡Debe seleccionar una categoría!');
+
+            return redirect()->to('/fullrepuesto');
+        }
+
+        $child = Category::findOrFail($childId); 
+
+        $search = $this->main->prepareSearch($child->parent_id); 
+
+        if(request()->ajax()){
+
+            return response()->json(view('frontend.ajax-products', $search)->render()); 
+
+        }else{
+
+            return view('frontend.filter_view', $search); 
+        }
+
+        // $input = \Input::all(); 
+        // error_log($child); 
     }
 
 

@@ -400,6 +400,47 @@ blockquote:before {
 	color:#333;
 }
 
+/*___________Search bar___________*/
+
+/*search box css start here*/
+.search-sec{
+    padding: 2rem;
+    margin-top: 2rem; 
+}
+.search-slt{
+    display: block;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+.wrn-btn{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: calc(3rem + 2px) !important;
+    border-radius:0;
+}
+@media (min-width: 992px){
+    .search-sec{
+        position: relative;
+/*        top: -114px;
+        background: rgba(26, 70, 104, 0.51);*/
+    }
+}
+
+@media (max-width: 992px){
+    .search-sec{
+        background: white;
+    }
+}
+
 
 
 /* __________ Alerts __________ */
@@ -2644,7 +2685,7 @@ ul.comments li ul li{
 }
 .search_form input[type="text"]:focus {border-color:#ccc;}
 
-.search_form #search_auto {width: 80vh;}
+.search_form #search_auto {width: auto;}
 
 
 
@@ -5238,8 +5279,8 @@ input[type="submit"].add_bag {
 /*-----------------------------------------------------------------------------------*/
 /*	HOME SALE
 /*-----------------------------------------------------------------------------------*/
-	.sale_caption1 .title1 {font-size:60px; line-height:60px;}
-	.sale_caption1 .title2 {font-size:24px; line-height:28px; margin-bottom:25px;}
+	.sale_caption1 .title1 {font-size:40px; line-height:40px;}
+	.sale_caption1 .title2 {font-size:15px; line-height:20px; margin-bottom:25px;}
 	
 	
 	

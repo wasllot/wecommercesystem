@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="tovar-color-select">
-                    <h4>Califica el producto</h4>
+                    <h4>@lang('site.rate the product')</h4>
                     <div class="pb-4 float-center">
                         <star-rating :rating="4.67" :round-start-rating="false"></star-rating>
                         
@@ -54,14 +54,14 @@
                         @endadmin
                         @guest
                             <a class="add_bag" href="{{ url('login') }}">
-                                <i class="fa fa-shopping-cart"></i>@Añadir al carrito</a>
+                                <i class="fa fa-shopping-cart"></i>@lang('site.add to bag')</a>
                         @endguest
                         @user
                             {!! Form::hidden('id', $item->id) !!}
                             {!! Form::hidden('name', $item->name) !!}
                             {!! Form::hidden('price', $item->price) !!}
                             {!! Form::hidden('img', $item->a_img) !!}
-                            {!! Form::submit('Add to bag', ['class' => 'add_bag']) !!}
+                            {!! Form::submit('Añadir al carrito', ['class' => 'add_bag']) !!}
                             {!! Form::close() !!}
                         @enduser
                     </div>

@@ -102,7 +102,7 @@ return [
     'home' => 'Inicio',
     '404 message' => 'La página que estás buscando no existe. Vuelve a la página principal',
     'category' => 'Categoría',
-    'introduce product' => 'Ingrese el producto que está buscano'
+    'introduce product' => 'Ingrese el producto que está buscando'
 
 
     

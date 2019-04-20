@@ -74,13 +74,13 @@
 
                                     @admin
 
-                                        <a href="{{ url('backend/admin') }}"><?= _('Profile')?></a>
+                                        <a href="{{ url('backend/admin') }}">Perfil</a>
 
                                     @endadmin
 
                                     @user
 
-                                        <a href="{{ url('backend/user') }}"><?= _('Profile')?></a>
+                                        <a href="{{ url('backend/user') }}">Perfil</a>
 
                                     @enduser
 

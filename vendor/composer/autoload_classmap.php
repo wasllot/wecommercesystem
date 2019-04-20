@@ -56,6 +56,7 @@ return array(
     'App\\Http\\Requests\\Request' => $baseDir . '/app/Http/Requests/Request.php',
     'App\\Http\\Requests\\SubmitCheckout' => $baseDir . '/app/Http/Requests/SubmitCheckout.php',
     'App\\Http\\Requests\\SubmitProduct' => $baseDir . '/app/Http/Requests/SubmitProduct.php',
+    'App\\Http\\Requests\\SubmitSearch' => $baseDir . '/app/Http/Requests/submitSearch.php',
     'App\\Http\\Resources\\ChatResource' => $baseDir . '/app/Http/Resources/ChatResource.php',
     'App\\Http\\Resources\\MessageResource' => $baseDir . '/app/Http/Resources/MessageResource.php',
     'App\\Http\\Resources\\QuestionResource' => $baseDir . '/app/Http/Resources/QuestionResource.php',

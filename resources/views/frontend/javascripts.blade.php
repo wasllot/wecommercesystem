@@ -5,13 +5,6 @@
 </div>
 <!-- TOVAR MODAL CONTENT -->
 
-<!-- SCRIPTS -->
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<!--[if IE]>
-<html class="ie" lang="en"> <![endif]-->
-
-<!-- <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script> -->
 <script src="{{ asset('/js/bootstrap-4.3.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/superfish.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/jquery.sticky.js') }}" type="text/javascript"></script>

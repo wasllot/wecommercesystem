@@ -17,31 +17,21 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- CSS -->
-    <link href="{{ asset('/css/bootstrap-4.3.min.css') }}" rel="stylesheet" type="text/css"/>
+<!--     <link href="{{ asset('/css/bootstrap-4.3.min.css') }}" rel="stylesheet" type="text/css"/> -->
     <!-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/> -->
-    <link href="{{ asset('/css/flexslider.css') }}" rel="stylesheet" type="text/css"/>
+<!--     <link href="{{ asset('/css/flexslider.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('/css/fancySelect.css') }}" rel="stylesheet" media="screen, projection"/>
     <link href="{{ asset('/css/animate.css') }}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('/css/jquery.fancybox.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('/css/jquery.fancybox.css') }}" rel="stylesheet" type="text/css"/> -->
 
-    <!-- SCRIPTS -->
-
-    <!-- <script src="{{ asset('/js/jquery.min.js') }}" type="text/javascript"></script> -->
-    <script src="{{ asset('/js/jquery-3.3.1.slim.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/popper.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/jquery-ui.min.js') }}" type="text/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="{{ asset('/js/dirPagination.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/productCtrl.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('/js/toArrayFilter.js') }}" type="text/javascript"></script>
-    <!-- <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script> -->
+    <link rel="stylesheet" href="{{ asset('/css/all.css') }}">
 
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,
                        700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <link href="{{ asset('/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+<!--     <link href="{{ asset('/font-awesome/css/font-awesome.css') }}" rel="stylesheet"> -->
 
 
 </head>
@@ -66,6 +56,14 @@
     </div>
     <!-- //PAGE -->
 </div>
+
+    <script src="{{ asset('/js/jquery-3.3.1.slim.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/popper.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/jquery-ui.min.js') }}" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="{{ asset('/js/dirPagination.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/productCtrl.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('/js/toArrayFilter.js') }}" type="text/javascript"></script>
 @include('frontend.javascripts')
     <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
 

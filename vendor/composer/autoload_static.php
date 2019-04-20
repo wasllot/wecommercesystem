@@ -467,6 +467,7 @@ class ComposerStaticInitda2e418caacdd86af3c3251562261edb
         'App\\Http\\Requests\\Request' => __DIR__ . '/../..' . '/app/Http/Requests/Request.php',
         'App\\Http\\Requests\\SubmitCheckout' => __DIR__ . '/../..' . '/app/Http/Requests/SubmitCheckout.php',
         'App\\Http\\Requests\\SubmitProduct' => __DIR__ . '/../..' . '/app/Http/Requests/SubmitProduct.php',
+        'App\\Http\\Requests\\SubmitSearch' => __DIR__ . '/../..' . '/app/Http/Requests/submitSearch.php',
         'App\\Http\\Resources\\ChatResource' => __DIR__ . '/../..' . '/app/Http/Resources/ChatResource.php',
         'App\\Http\\Resources\\MessageResource' => __DIR__ . '/../..' . '/app/Http/Resources/MessageResource.php',
         'App\\Http\\Resources\\QuestionResource' => __DIR__ . '/../..' . '/app/Http/Resources/QuestionResource.php',

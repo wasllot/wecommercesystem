@@ -55,7 +55,13 @@
 
 			showConversation(id) {
 
-		      window.location.href = "messages?conversation_id=" + id;
+				axios.get(`/conversations/${id}`).then(response => {
+
+				}).catch(error =>{
+					
+					console.log(error); 
+				});
+
 
 		    },
 
@@ -72,7 +78,7 @@
 
 		      axios.post(`/conversations/${id}/users`).then(response => {
 
-		        window.location.href = "messages?conversation_id=" + id;
+		        // window.location.href = "messages?conversation_id=" + id;
 
 		      });
    			},

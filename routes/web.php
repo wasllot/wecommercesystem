@@ -44,6 +44,11 @@ Route::get('/contacts', 'MainController@contacts');
 
 Route::get('/welcome', 'MainController@welcome');
 
+// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+// Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+// Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset.token');
+// Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
 Route::get('user/activation/{token}', 'Auth\LoginController@userActivation');
 
 Route::get('/frame/{id}', 'MainController@frame');
@@ -65,6 +70,8 @@ Route::get('/isAdmin', 'MainController@isAdmin');
 Route::get('conversations', 'ConversationController@index');
 Route::get('conversations/{conversation}/users', 'ConversationController@participants');
 Route::get('conversations/{conversation}/messages', 'ConversationController@getMessages');
+
+Route::get('/conversations/{conversation}/show', 'ConversationController@show');
 
 Route::post('conversations/{productName}', 'ConversationController@store');
 Route::post('conversations/{conversation}/users', 'ConversationController@join');

@@ -72,7 +72,14 @@ export default {
     },
 
     showConversation(id) {
-      window.location.href = "user-messages?conversation_id=" + id;
+      // window.location.href = "user-messages?conversation_id=" + id;
+
+      axios.get(`/conversations/${id}`).then(response => {
+
+        }).catch(error =>{
+          
+          console.log(error); 
+        });
     },
 
     isParticipant(id) {
@@ -88,7 +95,7 @@ export default {
     joinConversation(id) {
       axios.post(`/conversations/${id}/users`).then(response => {
         
-        window.location.href = "user-messages?conversation_id=" + id;
+        // window.location.href = "user-messages?conversation_id=" + id;
       });
     }
   },

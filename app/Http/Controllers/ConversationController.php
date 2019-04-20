@@ -84,7 +84,14 @@ class ConversationController extends Controller
     {
         Chat::conversation($conversation)->addParticipants(auth()->user());
         // error_log($conversation->users()); 
-        return response('');
+        return response(''); 
+    }
+
+    public function show($conversation){
+
+        error_log($conversation); 
+
+        return response(''); 
     }
 
 

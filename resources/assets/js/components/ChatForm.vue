@@ -78,6 +78,9 @@ export default {
           this.newMessage = "";
           window.location.href = "user-messages?conversation_id=" + this.conversation;
 
+        }).catch(error => {
+          window.location.href = "user-messages?conversation_id=" + this.conversation;
+          
         });
 
           // location.reload();

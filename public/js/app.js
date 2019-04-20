@@ -96000,7 +96000,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		showConversation: function showConversation(id) {
 
-			window.location.href = "messages?conversation_id=" + id;
+			axios.get('/conversations/' + id).then(function (response) {}).catch(function (error) {
+
+				console.log(error);
+			});
 		},
 		leaveConversation: function leaveConversation(id) {
 
@@ -96013,7 +96016,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			axios.post('/conversations/' + id + '/users').then(function (response) {
 
-				window.location.href = "messages?conversation_id=" + id;
+				// window.location.href = "messages?conversation_id=" + id;
+
 			});
 		},
 		getParticipants: function getParticipants() {
@@ -96342,7 +96346,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     showConversation: function showConversation(id) {
-      window.location.href = "user-messages?conversation_id=" + id;
+      // window.location.href = "user-messages?conversation_id=" + id;
+
+      axios.get('/conversations/' + id).then(function (response) {}).catch(function (error) {
+
+        console.log(error);
+      });
     },
     isParticipant: function isParticipant(id) {
       return window.conversations.indexOf(id) !== -1;
@@ -96355,7 +96364,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     joinConversation: function joinConversation(id) {
       axios.post('/conversations/' + id + '/users').then(function (response) {
 
-        window.location.href = "user-messages?conversation_id=" + id;
+        // window.location.href = "user-messages?conversation_id=" + id;
       });
     }
   }
@@ -96948,6 +96957,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).then(function (response) {
 
         _this.newMessage = "";
+        window.location.href = "user-messages?conversation_id=" + _this.conversation;
+      }).catch(function (error) {
         window.location.href = "user-messages?conversation_id=" + _this.conversation;
       });
 

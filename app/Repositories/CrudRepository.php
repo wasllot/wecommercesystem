@@ -332,6 +332,7 @@ class CrudRepository
      */
     public function getOrderTable()
     {
+
         return $table = with(new Order())->getTable();
     }
 
@@ -368,9 +369,7 @@ class CrudRepository
         $grid->add('id', 'ID', true)->style("width:100px");
         $grid->add('order_date', 'Fecha');
         $grid->add('products.name', 'Producto');
-        // $grid->add('size', 'Size');
         $grid->add('<img src="/images/products/{{ $img }}" height="25" width="25">', 'Imágen');
-        // $grid->add('color', 'Color');
         $grid->add('quantity', 'Cantidad');
         $grid->add('amount', 'Monto');
         $grid->edit('/backend/user-orders/edit', 'Orden actual', 'show');

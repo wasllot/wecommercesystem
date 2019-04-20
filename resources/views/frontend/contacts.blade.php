@@ -64,28 +64,6 @@
 					</li>
 				</ul>
 			</div>
-
-			<!-- <div class="col-lg-4 col-md-4 col-sm-6 padbot30"> -->
-				<!-- CONTACT FORM -->
-<!-- 				<div class="contact_form">
-					<h3>
-						<b><?= _('Contacts form')?></b>
-					</h3>
-					<p><?= _('Sign in to save and share your Love List.')?></p>
-					<div id="note"></div>
-					<div id="fields">
-						<form id="ajax-contact-form" action="#">
-							<label><?= _('Name')?></label> <input type="text" name="name" value=""
-								placeholder="Name" /> <label>E-mail</label> <input type="text"
-								name="email" value="" placeholder="E-mail" /> <label><?= _('Phone')?></label>
-							<input type="text" name="phone" value="" placeholder="Phone" /> <label><?= _('Message')?></label>
-							<textarea name="message" placeholder="Message"></textarea>
-							<br> <input class="btn active" type="submit" value="Send Message" />
-						</form>
-					</div>
-				</div> -->
-				<!-- //CONTACT FORM -->
-			<!-- </div> -->
 		</div>
 		<!-- //ROW -->
 	</div>

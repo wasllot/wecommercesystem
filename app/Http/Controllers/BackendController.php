@@ -126,6 +126,8 @@ class BackendController extends Controller
      */
     public function products()
     {
+        set_time_limit(0);
+
         $filter = $this->crud->productsFilter();
         $grid = $this->crud->productsGrid();
         $title = $this->crud->getProductTable();
@@ -172,6 +174,8 @@ class BackendController extends Controller
      */
     public function orders()
     {
+        set_time_limit(0);
+
         $filter = $this->crud->ordersFilter();
         $grid = $this->crud->ordersGrid();
         $title = $this->crud->getOrderTable();
@@ -184,6 +188,8 @@ class BackendController extends Controller
      */
     public function ordersEdit()
     {
+        set_time_limit(0);
+
         if (request()->get('do_delete') == 1) return "not the first";
         $edit = $this->crud->ordersEdit();
         $title = $this->crud->getOrderTable();
@@ -196,6 +202,8 @@ class BackendController extends Controller
      */
     public function userOrders()
     {
+        set_time_limit(0);
+
         $grid = $this->crud->UserOrdersGrid();
         $title = $this->crud->getOrderTable();
         return view('backend/content', compact('grid', 'title'));
@@ -207,6 +215,9 @@ class BackendController extends Controller
      */
     public function userOrdersEdit(OrderRepository $order, GateContract $gate)
     {
+
+        set_time_limit(0);
+
         if (request()->has('update')) {
             $result = $order->findBy('id', request()->input('update'));
         } else {

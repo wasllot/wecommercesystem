@@ -91,7 +91,7 @@
                                     <i class="fa fa-sign-out"></i>
 
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <?= _('Logout')?>
+                                        Salir
 
                                     </a>
 

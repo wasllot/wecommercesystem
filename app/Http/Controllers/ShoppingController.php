@@ -22,6 +22,7 @@ class ShoppingController extends Controller
         $this->cart = $cart;
         $this->shopping = $shoppingService;
     }
+    
 
     /**
      * Show shopping cart to user.

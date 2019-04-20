@@ -26,6 +26,7 @@
 
                 <a v-else href="#" class="text-danger pull-right " title="leave conversation" @click="leaveConversation(conversation.id)"
                 >
+                
                   <strong>Salir</strong>
 
                 </a>

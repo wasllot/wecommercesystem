@@ -60,7 +60,7 @@ class BackendController extends Controller
     public function brand()
     {
         $filter = $this->crud->brandsFilter();
-        $grid = $this->crud->brandsGrid();
+        $grid = $this->crud->brandsGrid($filter);
         $title = $this->crud->getBrandTable();
         return view('backend/content', compact('filter', 'grid', 'title'));
     }
@@ -129,7 +129,7 @@ class BackendController extends Controller
     {
 
         $filter = $this->crud->productsFilter();
-        $grid = $this->crud->productsGrid();
+        $grid = $this->crud->productsGrid($filter);
         $title = $this->crud->getProductTable();
         return view('backend/content', compact('filter', 'grid', 'title'));
     }
@@ -172,12 +172,10 @@ class BackendController extends Controller
      * Show all orders to admins
      * @return View
      */
-    public function orders()
-    {
-        
+    public function orders(){
 
         $filter = $this->crud->ordersFilter();
-        $grid = $this->crud->ordersGrid();
+        $grid = $this->crud->ordersGrid($filter);
         $title = $this->crud->getOrderTable();
         return view('backend/content', compact('filter', 'grid', 'title'));
     }
@@ -219,8 +217,11 @@ class BackendController extends Controller
         
 
         if (request()->has('update')) {
+
             $result = $order->findBy('id', request()->input('update'));
+
         } else {
+
             $result = $order->findOrFail(request()->all());
         }
         //$this->authorize('view-resource', $order);

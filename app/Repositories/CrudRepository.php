@@ -60,9 +60,9 @@ class CrudRepository
      * Crud for Brand table.
      * @return mixed
      */
-    public function brandsGrid()
+    public function brandsGrid($brandsFilter)
     {
-        $grid = DataGrid::source($this->brandsFilter());
+        $grid = DataGrid::source($brandsFilter);
         $grid->label('Brands');
         $grid->attributes(array("class" => "table table-striped"));
         $grid->add('brand_id', 'ID', true)->style("width:100px");
@@ -195,9 +195,9 @@ class CrudRepository
      * Crud for Product table.
      * @return mixed
      */
-    public function productsGrid()
+    public function productsGrid($productsFilter)
     {
-        $grid = DataGrid::source($this->productsFilter());
+        $grid = DataGrid::source($productsFilter);
         $grid->label('Lista de productos');
         $grid->attributes(array("class" => "table table-striped"));
         $grid->add('id', 'ID', true)->style("width:100px");
@@ -206,8 +206,7 @@ class CrudRepository
         $grid->add('brands.brand', 'Marca');
         $grid->add('category.cat', 'Categoría');
         $grid->add('category.parent_id','Categoría padre');
-        // $grid->add('{{ implode(", ", $size->pluck("size")->all()) }}', 'Sizes');
-        // $grid->add('{{ implode(", ", $color->pluck("color")->all()) }}', 'Colors');
+        
         $grid->add('<img src="/images/products/{{ $a_img }}" height="25" width="20">', 'Principal');
         $grid->add('<img src="/images/products/{{ $b_img }}"height="25" width="20">', 'Secundaria');
         $grid->add('quantity', 'Cantidad');
@@ -305,9 +304,9 @@ class CrudRepository
      * Crud for Products table.
      * @return mixed
      */
-    public function ordersGrid()
+    public function ordersGrid($ordersFilter)
     {
-        $grid = DataGrid::source($this->ordersFilter());
+        $grid = DataGrid::source($ordersFilter);
         $grid->label('Pedidos');
         $grid->attributes(array("class" => "table table-striped text-center"));
         $grid->add('id', 'ID', true)->style("width:100px");

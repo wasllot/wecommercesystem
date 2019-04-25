@@ -54,9 +54,9 @@
     border: 4px solid #387ef5;
     padding: 1%;
     border-radius: 5px;
-    text-align: left;
+    text-align: right;
     margin-bottom: 1rem;
-    width: auto;
+    width: 100;
     max-width: 50%;
     margin-left: auto; 
     margin-right: 1rem; 
@@ -86,12 +86,20 @@
     border: 4px solid #949494;
     padding: 1%;
     border-radius: 5px;
-    text-align: right;
+    text-align: left;
     margin-bottom: 1rem;
     width: auto;
     max-width: 50%;
     margin-left: 1rem; 
 
+}
+
+.img-loader{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  height: 30px;
 }
 .box-gray:after, .box-gray:before {
     right: 100%;

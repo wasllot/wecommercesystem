@@ -66,19 +66,12 @@ export default {
     fetchConversations() {
       axios.get("/backend/conversationsUser").then(response => {
         this.conversations = response.data;
-        console.log(response.data); 
+        
       });
     },
 
     showConversation(id) {
-      // window.location.href = "user-messages?conversation_id=" + id;
-
-      axios.get(`/conversations/${id}`).then(response => {
-
-        }).catch(error =>{
-          
-          console.log(error); 
-        });
+      window.location.href = "user-messages?conversation_id=" + id;
     },
 
     isParticipant(id) {
@@ -94,7 +87,7 @@ export default {
     joinConversation(id) {
       axios.post(`/conversations/${id}/users`).then(response => {
         
-        // window.location.href = "user-messages?conversation_id=" + id;
+        window.location.href = "user-messages?conversation_id=" + id;
       });
     }
   },

@@ -17,7 +17,8 @@ require('./bootstrap');
 
 const firebase = require('firebase/app');
 
-import 'firebase/firestore'
+import 'firebase/firestore';
+import 'firebase/storage';
 
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)

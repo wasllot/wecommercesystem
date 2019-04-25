@@ -25,12 +25,16 @@ $conversationId = Request::query('conversation_id');
 						@php
 							$data = Chat::conversations()->getById($conversationId)->data;
 						@endphp
+
 							<div class="chat-bottom-bar" style="padding: 1rem; text-align: center; color: white !important;">
+
 								<h3>{{$data}}</h3>
+
 							</div>
-					        <div class="msg-container col-md-12 col-xs-12">
+
+					        <div class="msg-container">
 					        	
-					        	<div class="col-md-12 col-xs-12">
+					        	<div>
 					        		<chat-messages :conversation="{{ $conversationId }}" :user="{{ auth()->user() }}" ></chat-messages>
 					      		</div>
 		        

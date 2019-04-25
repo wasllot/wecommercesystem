@@ -6,22 +6,30 @@
       
       <div class="chat-msg box-blue" v-if="message.author.id == user.id">
 
-          <img class="profile" src="" />
+          <a :href="message.url" target="_blank">
 
-          <p>{{message.message}}</p>
+            <img class="img-responsive" style="margin-bottom: 1rem;" width="150" v-if="message.url" :src="message.url" />
+          </a>
+
+          <p v-if="message.message">{{message.message}}</p>
           <div class="chat-msg-author">
               <strong>{{ message.author.name }}</strong>&nbsp;
           </div>
       </div>
 
       <div class="chat-msg box-gray" v-else>
-          <img class="profile" src="" />
 
-          <p>{{message.message}}</p>
+          <a :href="message.url" target="_blank">
+
+            <img class="img-responsive" style="margin-bottom: 1rem;" width="150" v-if="message.url" :src="message.url" />
+          </a>
+
+          <p v-if="message.message">{{message.message}}</p>
           <div class="chat-msg-author">
               <strong>{{ message.author.name }}</strong>&nbsp;
           </div>
       </div>
+
     </div>
 
   </div>
@@ -48,30 +56,10 @@ export default {
         })
 
         this.messages = allMessages; 
+
       })
 
     },
-
-    deleteMessages() {
-      axios
-        .delete(`/conversations/${this.conversation}/messages`)
-        .then(response => {
-          this.messages = response.data;
-        });
-    },
-
-    enablePusher() {
-      let pusher = new Pusher(process.env.MIX_PUSHER_APP_KEY, {
-        cluster: process.env.MIX_PUSHER_APP_CLUSTER
-      });
-
-      let channel = pusher.subscribe(
-        `mc-chat-conversation.${this.conversation}`
-      );
-      channel.bind("Musonza\\Chat\\Eventing\\MessageWasSent", data => {
-        this.messages.data.push(data.message);
-      });
-    }
   },
 
   created() {

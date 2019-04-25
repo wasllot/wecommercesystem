@@ -8,7 +8,9 @@
 
           <a :href="message.url" target="_blank">
 
-            <img class="img-responsive" style="margin-bottom: 1rem;" width="150" v-if="message.url" :src="message.url" />
+            <img class="img-responsive" style="margin-bottom: 1rem;" width="150" v-if="message.type == 'image/png' || message.type == 'image/jpg' || message.type == 'image/jpeg'" :src="message.url" />            
+
+              <p v-else>{{message.name}}</p>
           </a>
 
           <p v-if="message.message">{{message.message}}</p>
@@ -56,6 +58,8 @@ export default {
         })
 
         this.messages = allMessages; 
+
+        console.log(this.messages); 
 
       })
 

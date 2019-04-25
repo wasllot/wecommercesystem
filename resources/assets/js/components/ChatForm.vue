@@ -3,7 +3,7 @@
 
     <form style="display:inherit">
       
-      <div class="input-group" >
+      <div class="input-group" @submit.prevent="create">
 
         <input class="form-control input-sm chat-input" 
           id="btn-input"
@@ -26,16 +26,6 @@
               </div> -->
 
           </label>        
-
-        </span>
-
-        <span class="input-group-btn">
-
-          <button class="btn btn-sm chat-submit-button" @click="sendMessage" :disabled="disabled">
-
-            <i class="glyphicon glyphicon-send"></i>
-
-          </button>
 
         </span>
 
@@ -63,8 +53,8 @@ export default {
 
   data() {
     return {
-      newMessage: "",
-      loading: Boolean = false
+      newMessage: null,
+      loading: false
 
     };
   },
@@ -91,7 +81,7 @@ export default {
         created_at: new Date()
       })
 
-      this.newMessage = '';
+      this.newMessage = null;
           
     },
 
@@ -109,6 +99,8 @@ export default {
 
               url: downloadUrl,
               author: this.user,
+              type: file.type,
+              name: file.name,
               created_at: new Date()
             })       
           })                 

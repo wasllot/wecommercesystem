@@ -67,26 +67,20 @@ export default {
     },
 
     sendMessage() {
-      axios
-        .post(`/conversations/${this.conversation}/messages`, {
 
-          message: this.newMessage
+      db.collection('chat').doc('conv_'+this.conversation).collection('messages').add({
 
-        })
-        .then(response => {
+        message: this.newMessage,
+        author: this.user,
+        created_at: new Date()
+      })
 
-          this.newMessage = "";
-          window.location.href = "user-messages?conversation_id=" + this.conversation;
-
-        }).catch(error => {
-          window.location.href = "user-messages?conversation_id=" + this.conversation;
+      this.newMessage = '';
           
-        });
+    },
+    disabled(){
 
-          // location.reload();
-          // window.location.href = "user-messages?conversation_id=" + this.conversation;
-          
-
+      return !(this.newMessage);
     }
   }
 

@@ -7,6 +7,7 @@ use App\Repositories\BrandRepository;
 use App\Repositories\ColorRepository;
 use App\Repositories\ProductRepository;
 use App\Repositories\SizeRepository;
+use \Cache;
 
 class MainService
 {
@@ -52,10 +53,13 @@ class MainService
      */
     public function getHome()
     {
-        $data['brands'] = app(BrandRepository::class)->all();
-        $data['latest'] = $this->product->latest();
-        $data['products'] = $this->product->product();
-        return $data;
+
+            $data['brands'] = app(BrandRepository::class)->all();
+            $data['latest'] = $this->product->latest();
+            $data['products'] = $this->product->product();
+
+            return $data;
+    
     }
 
 

@@ -75,15 +75,11 @@
 		    },
 		    isParticipant(id){
 
-		    	console.log(this.participants);
-
 		    	var isMember = false;
 
 		    	this.participants.forEach(function(participant){
 
 		    		if(participant.id == id){
-
-		    			console.log('Participante id: ' + participant.id + 'auth user id: '+id); 
 
 		    			isMember = true;
 

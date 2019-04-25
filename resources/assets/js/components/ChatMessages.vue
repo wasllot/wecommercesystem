@@ -2,24 +2,24 @@
   <div>
     <br>
     <br>
-    <div v-for="(message, index) in messages.data" :key="index"> 
+    <div v-for="(message, index) in messages" :key="index"> 
       
-      <div class="chat-msg box-blue" v-if="message.sender.id == user.id">
+      <div class="chat-msg box-blue" v-if="message.author.id == user.id">
 
           <img class="profile" src="" />
 
-          <p>{{message.body}}</p>
+          <p>{{message.message}}</p>
           <div class="chat-msg-author">
-              <strong>{{ message.sender.name }}</strong>&nbsp;
+              <strong>{{ message.author.name }}</strong>&nbsp;
           </div>
       </div>
 
       <div class="chat-msg box-gray" v-else>
           <img class="profile" src="" />
 
-          <p>{{message.body}}</p>
+          <p>{{message.message}}</p>
           <div class="chat-msg-author">
-              <strong>{{ message.sender.name }}</strong>&nbsp;
+              <strong>{{ message.author.name }}</strong>&nbsp;
           </div>
       </div>
     </div>
@@ -37,11 +37,19 @@ export default {
 
   methods: {
     fetchMessages() {
-      axios
-        .get(`/conversations/${this.conversation}/messages`)
-        .then(response => {
-          this.messages = response.data;
-        });
+
+      db.collection('chat').doc('conv_'+this.conversation).collection('messages').orderBy('created_at').onSnapshot((querySnapshot) => {
+
+        let allMessages = [];
+
+        querySnapshot.forEach(doc =>{
+
+            allMessages.push(doc.data()); 
+        })
+
+        this.messages = allMessages; 
+      })
+
     },
 
     deleteMessages() {

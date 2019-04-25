@@ -15,6 +15,10 @@ require('./bootstrap');
 
  // window.Vue = require('vue');
 
+const firebase = require('firebase/app');
+
+import 'firebase/firestore'
+
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)
 
@@ -25,6 +29,23 @@ import StarRating from 'vue-star-rating'
 
 import md from 'marked'
 window.md = md
+
+
+
+var config = {
+    apiKey: "AIzaSyBK-33qoLo3POwNn_OlvDS9jSC_r9WTn9Q",
+    authDomain: "chat-d27db.firebaseapp.com",
+    databaseURL: "https://chat-d27db.firebaseio.com",
+    projectId: "chat-d27db",
+    storageBucket: "chat-d27db.appspot.com",
+    messagingSenderId: "804279136279"
+};
+
+firebase.initializeApp(config);
+
+const db = firebase.firestore();
+
+window.db = firebase.firestore();
 
 
 Vue.component('questions', require('./components/questions/showQuestions.vue'));

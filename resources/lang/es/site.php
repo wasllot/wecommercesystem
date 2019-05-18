@@ -93,7 +93,7 @@ return [
     'back to shopping bag' => 'volver al carrito',
     'contact address' => 'Dirección de contacto',
     'rate the product' => 'Califica el producto',
-    'shippings' => 'ventas',
+    'shipping' => 'Envío',
     'claims' => 'Reclamos',
     'add to bag' => 'Añadir al carrito',
     'about title' => 'En Fullrepuesto.com, encontrarás repuestos para casi todas las marcas de autos',

@@ -74,8 +74,8 @@
                         @foreach ( $cart as $item )
                             <tr class="cart_item">
                                 <td class="product-thumbnail">
-                                    <a href="{{ url('images/products') }}/{{$item->options->img}}">
-                                        <img src="{{ url('images/products') }}/{{$item->options->img}}"
+                                    <a href="{{$item->options->img}}">
+                                        <img src="{{$item->options->img}}"
                                              width="100px" alt=""/></a></td>
                                 <td>{{$i++}}</td>
                                 <td class="product-name">

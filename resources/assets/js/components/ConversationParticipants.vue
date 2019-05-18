@@ -1,13 +1,24 @@
 <template>
-  <ul class="chat list-unstyled">
-    <li class="left clearfix" v-for="(user, index) in participants" :key="index">
-      <div class="chat-body clearfix">
-        <div class="header">
-          <strong class="primary-font" style="text-align:center !important;">{{ user.name }}</strong>
-        </div>
-      </div>
-    </li>
-  </ul>
+<div>
+  <a href="#"  v-for="(user, index) in participants" :key="index">
+  
+    <img class="contacts-list-img" src="https://image.flaticon.com/icons/svg/56/56491.svg" alt="User Image">
+  
+    <div class="contacts-list-info">
+  
+          <span class="contacts-list-name">
+            
+            {{user.name}}
+  
+          </span>
+  
+      <span class="contacts-list-msg">{{user.email}}</span>
+      
+    </div>
+    <!-- /.contacts-list-info -->
+  </a>
+  <br>
+</div>
 </template>
 
 <script>

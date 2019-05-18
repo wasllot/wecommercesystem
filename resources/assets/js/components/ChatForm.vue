@@ -1,45 +1,18 @@
 <template>
-  <div>
 
-    <form style="display:inherit">
+    <div class="input-group">
       
-      <div class="input-group" @submit.prevent="create">
+      <input type="text" placeholder="Ingresa tu mensaje ..." class="form-control" v-model="newMessage" @keyup.enter="sendMessage">
 
-        <input class="form-control input-sm chat-input" 
-          id="btn-input"
-          type="text"
-          name="message"
-          placeholder="Ingresa tu mensaje..."
-          v-model="newMessage"
-          @keyup.enter="sendMessage" required/>
+          <span class="input-group-btn">
 
-        <span class="input-group-btn">
+            <label for="file_input" class="btn btn-primary btn-flat"><i class="fa fa-file bg-aqua"></i></label>
+            <input name="file_input" type="file" id="file_input" class="form-control" @change="uploadFile" style="display: none;" />
 
-          <label class="btn btn-sm chat-submit-button">
+          </span>
 
-              <i class="glyphicon glyphicon-paperclip"></i>
-
-              <input type="file" class="file_input" @change="uploadFile"/>
-<!-- 
-              <div style="align-items: center;">
-                   <img src="https://www.segurosdelestado.com/images/ajax_loading.gif" v-if="loading" alt="" class="img-loader">
-              </div> -->
-
-          </label>        
-
-        </span>
-
-      </div>
-
-    </form>
-
-    <div style="align-items: center; padding-top: 1rem; padding-bottom: 1rem;">
-         <img src="https://www.segurosdelestado.com/images/ajax_loading.gif" v-if="loading" alt="" class="img-loader">
     </div>
 
- 
-
-</div>
 
 </template>
 

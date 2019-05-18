@@ -1,28 +1,23 @@
 <template>
+	
+  <li  v-if="isParticipant(user.id)"> 
 
-      <li class="left clearfix" v-if="isParticipant(user.id)">
+        <a href="#"  @click="showConversation(conversation.id)">
 
-         <span class="chat-img pull-left">
+          <div class="pull-left">
 
-           <img src="https://image.ibb.co/jw55Ex/def_face.jpg" width="60" alt="User Avatar" class="img-circle">
+            <img src="https://image.flaticon.com/icons/svg/56/56491.svg" class="img-circle" alt="User Image">
 
-         </span>
+          </div>
 
-         <div class="chat-body clearfix">
+          <h4>
+            Conv. {{conversation.id}}
+            <small><i class="fa fa-clock-o"></i> {{conversation.created_at}}</small>
+          </h4>
+          <p>{{conversation.data}}</p>
+        </a>
+  </li>
 
-            <div class="header_sec">
-
-              <a href="#"  @click="showConversation(conversation.id)">
-
-               <strong class="primary-font">{{ conversation.data }}</strong>
-
-             </a>
-
-            </div>
-
-         </div>
-
-      </li>
 
 </template>
 

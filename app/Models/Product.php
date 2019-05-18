@@ -27,6 +27,8 @@ class Product extends Model
         'name',
         'description',
         'a_img',
+        'b_img',
+        'c_img',
         'brand_id',
         'cat_id',
         'quantity',
@@ -65,19 +67,15 @@ class Product extends Model
         return $this->hasMany('App\Models\Products_sizes');
     }
 
-    public function size()
+    public function payment()
     {
-        return $this->belongsToMany('App\Models\Size');
+        return $this->belongsTo('App\Models\Payment');
     }
 
-    public function colorsProducts()
-    {
-        return $this->hasMany('App\Models\Colors_products');
-    }
 
-    public function color()
+    public function shipping()
     {
-        return $this->belongsToMany('App\Models\Color');
+        return $this->belongsTo('App\Models\Shipping');
     }
 
     public function questions()

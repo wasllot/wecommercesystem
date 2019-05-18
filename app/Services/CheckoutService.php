@@ -45,7 +45,7 @@ class CheckoutService extends BaseService
         $data['payments'] = $this->payment->find(session()->get('payment'));
         $data['shippings'] = $this->shipping->find(session()->get('delivery'));
         $data['customer'] = session()->all();
-        $data['vat_total'] = $this->vat();
+        // $data['vat_total'] = $this->vat();
         $data['finalTotal'] = $cart['grandTotal'] + $data['shippings']->rate;
         // $data['finalTotal'] = $cart['grandTotal'] + $data['shippings']->rate + $data['vat_total'];
         return $data;

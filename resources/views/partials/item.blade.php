@@ -4,9 +4,9 @@
         <div class="tovar_item">
             <div class="tovar_img">
                 <div class="tovar_img_wrapper">
-                    <img class="img" src="{{ url('images/products') }}/{{$row->a_img}}" alt=""/>
+                    <img class="img" src="{{$row->a_img}}" alt=""/>
                     <img class="img_h fancybox fancybox.ajax img-fluid" href="{{ url('frame') }}/{{$row->id}}"
-                         src="{{ url('images/products') }}/{{$row->b_img}}" alt=""/>
+                         src="{{$row->b_img}}" alt=""/>
                 </div>
                 <div class="tovar_item_btns d-flex mx-2">
                     <a class="open-project tovar_view"

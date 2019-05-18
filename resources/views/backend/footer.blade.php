@@ -1,15 +1,11 @@
 <!-- Footer -->
-<footer class="app-footer">
-    <div class="wrapper">
-        <span class="pull-right">Full repuesto by <a href="https://wasllot.herokuapp.com">Wasllot </a></span>2019 Copyright.
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Full Repuesto</b>
     </div>
-</footer>
-<!-- End Footer -->
+    <strong>Copyright &copy; Full repuesto 2019 by <a href="https://wasllot.herokuapp.com">Wasllot</a>.</strong> All rights
+    reserved.
+  </footer>
 
-<div>
-    <!-- Javascript Libs -->
-    <script type="text/javascript" src="{{ asset('/js/bootstrap.min.js') }}"></script>
-    <!-- Javascript -->
-    <script type="text/javascript" src="{{ asset('/js/app-backend.js') }}"></script>
-    {!! Rapyd::scripts() !!}
-</div>
+<!-- End Footer -->

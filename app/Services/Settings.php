@@ -40,6 +40,8 @@ trait Settings
             $data['grandTotal'] = Cart::instance(auth()->id())
                 ->total();
         }
+
+        error_log(json_encode($data)); 
         return $data;
     }
 

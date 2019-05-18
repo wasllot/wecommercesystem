@@ -4,7 +4,7 @@
         <ul class="cart-items">
             <li class="clearfix">
                 <img class="cart_item_product"
-                     src="{{ url('images/products') }}/{{$item->options->img}}" alt=""/>
+                     src="{{$item->options->img}}" alt=""/>
                 <a href=""
                    class="cart_item_title">{{$item->name}}</a>
                 <span class="cart_item_price">

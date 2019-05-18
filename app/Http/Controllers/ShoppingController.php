@@ -53,21 +53,13 @@ class ShoppingController extends Controller
     {
         $cart = $this->cart->instance(auth()->id())->content();
         if (!session()->has('email')) {
-            session()->flash('flash_message', 'YOUR MUST FILL REQUIRED FIELDS!');
+            session()->flash('flash_message', 'Debes llegar todas las filas requeridas');
             return redirect('checkout/shipping');
         } elseif ($cart->isEmpty()) {
-            session()->flash('flash_message', 'YOU MUST SELECT PRODUCT!');
+            session()->flash('flash_message', 'Debes seleccionar un producto');
             return redirect()->back();
         }
         $this->shopping->createOrder($cart);
-
-        $participants = [auth()->user()->id];
-
-        foreach ($cart as $c) {
-
-            $conversation = Chat::createConversation($participants, $c->name);
-
-        }
 
         $this->cart->instance(auth()->id())->destroy();
         return redirect('checkout/order');
@@ -86,6 +78,7 @@ class ShoppingController extends Controller
             return redirect()->back();
         }
         $data = $this->shopping->prepareStore();
+        error_log(json_encode($data)); 
         //make new instance of the Cart for every user.
         //active instance of the cart is curent instance.
         $this->cart->instance(auth()->id())->add($data);
@@ -134,7 +127,7 @@ class ShoppingController extends Controller
      */
     public function finalOrder()
     {
-        session()->flash('flash_message', '¡Su orden ha sido satiscantoriamente realizada!');
+        session()->flash('flash_message', '¡Su orden ha sido satiscantoriamente realizada! <a href="/backend/user-orders">Ir a sus órdenes</a>');
         return view('frontend.placeOrder');
     }
 }

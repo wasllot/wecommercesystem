@@ -16,15 +16,6 @@
 
     <link rel="shortcut icon" href="images/favicon.ico">
 
-    <!-- CSS -->
-<!--     <link href="{{ asset('/css/bootstrap-4.3.min.css') }}" rel="stylesheet" type="text/css"/> -->
-    <!-- <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/> -->
-<!--     <link href="{{ asset('/css/flexslider.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('/css/fancySelect.css') }}" rel="stylesheet" media="screen, projection"/>
-    <link href="{{ asset('/css/animate.css') }}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css"/>
-    <link href="{{ asset('/css/jquery.fancybox.css') }}" rel="stylesheet" type="text/css"/> -->
-
     <link rel="stylesheet" href="{{ asset('/css/all.css') }}">
 
     <!-- FONTS -->
@@ -38,10 +29,11 @@
 <body>
 
 <!-- PRELOADER -->
-<div id="preloader">
-    <img src="{{ url('images/preloader.gif') }}" alt=""/></div>
+<!-- <div id="preloader">
+    <img src="{{ url('images/preloader.gif') }}" alt=""/>
+</div> -->
 <!-- //PRELOADER -->
-<div class="preloader_hide" id="app">
+<div class="" id="app">
     <!-- PAGE -->
     <div id="page">
 

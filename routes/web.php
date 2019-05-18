@@ -80,6 +80,14 @@ Route::post('conversations/{conversation}/messages', 'ConversationController@sen
 Route::delete('conversations/{conversation}/users', 'ConversationController@leaveConversation');
 Route::delete('conversations/{conversation}/messages', 'ConversationController@deleteMessages');
 
+Route::get('/order-product/{product_id}', 'BackendController@orderData');
+
+Route::get('/backend/order/{orderId}', 'BackendController@orderDetails');
+
+Route::get('/rating/{productId}', 'ArticlesController@getRating');
+Route::post('/rating/{productId}/{rating}', 'ArticlesController@setRating');
+
+
 Route::middleware('admin:user')
     ->prefix('/{slug}/{id}')
     ->group(function(){
@@ -127,6 +135,9 @@ Route::middleware('admin:user')
     ->group(function () {
         Route::get('/user', 'BackendController@dashboard');
         Route::get('user-orders', 'BackendController@userOrders');
+        Route::get('user-orders/{orderId}', 'BackendController@orderDetails');
+        Route::get('user-orders/{orderId}', 'BackendController@orderDetails');
+        Route::get('order/delete/{orderId}', 'BackendController@deleteOrder');
         Route::get('user-messages', 'BackendController@userMessages');
         Route::get('my-questions', 'BackendController@myQuestions'); 
         Route::get('conversationsUser', 'ConversationController@conversationsUser');
@@ -150,13 +161,22 @@ Route::middleware('admin:admin')
         Route::get('category', 'BackendController@category');
         Route::any('category/edit', 'BackendController@CategoryEdit');
         Route::get('products', 'BackendController@products');
+        Route::get('product/delete/{productId}', 'ArticlesController@destroy');
+        Route::get('products/{productId}', 'BackendController@productDetails');
+        Route::get('products/edit/{productId}', 'BackendController@productEdit');
+        Route::put('product/update/{productId}', 'ArticlesController@update');
+        Route::put('product/{cat_id}/{porcentaje}', 'ArticlesController@updatePrice');
         Route::get('questions', 'BackendController@questions');
         Route::get('replies', 'BackendController@replies');
         Route::get('messages', 'BackendController@messages');
-        Route::get('product/{id}', 'MainController@getProducts');
-        Route::any('products/edit', 'BackendController@productsEdit');
+        // Route::get('product/{id}', 'MainController@getProducts');
+        Route::get('product/addProduct', 'BackendController@addProduct');
+        // Route::any('products/edit', 'BackendController@productsEdit');
+        Route::any('product/create', 'ArticlesController@store');
         Route::get('orders', 'BackendController@orders');
+        Route::get('order-details/{orderId}', 'BackendController@orderDetails');
         Route::any('orders/edit', 'BackendController@ordersEdit');
+        Route::get('order/delete/{orderId}', 'BackendController@deleteOrder');
         Route::get('/admin', 'BackendController@dashboard');
         Route::get('roles', 'UsersController@role');
         Route::get('/question', 'QuestionController@index'); 

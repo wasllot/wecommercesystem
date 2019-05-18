@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Repositories\CrudRepository;
 use App\Repositories\OrderRepository;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
@@ -9,6 +10,20 @@ use App\Message;
 use Chat;
 use Musonza\Chat\Models\Conversation;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
+use App\Models\Order;
+use App\Models\User;
+use App\Models\Order_details;
+use App\Models\Shipping;
+use App\Models\Payment;
+use App\Models\Brand;
+use App\Models\Category;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\CreateProduct;
+
+
+
 
 
 class BackendController extends Controller
@@ -128,10 +143,39 @@ class BackendController extends Controller
     public function products()
     {
 
-        $filter = $this->crud->productsFilter();
-        $grid = $this->crud->productsGrid($filter);
-        $title = $this->crud->getProductTable();
-        return view('backend/content', compact('filter', 'grid', 'title'));
+        $data['products'] = Product::with('brands', 'category')->get(); 
+        $data['categories'] = Category::all();
+        
+        return view('backend/products', $data);
+    }
+
+    public function addProduct(){
+        // $data['products'] = Product::with('brands','category')->get();
+        $data['categories'] = Category::all(); 
+        $data['brands'] = Brand::all(); 
+
+        return view('backend/addProduct', $data);
+    }
+
+
+    public function storeProduct(CreateProduct $request){
+
+    }
+
+    public function productDetails($product_id){
+
+        $data['product'] = Product::with('brands', 'category')->where('id', $product_id)->get(); 
+
+        return view('backend/productDetails', $data); 
+    }
+
+    public function productEdit($productId){
+
+        $data['categories'] = Category::all(); 
+        $data['brands'] = Brand::all(); 
+        $data['product'] = Product::with('brands', 'category')->where('id', $productId)->get(); 
+
+        return view('backend/editProduct', $data);
     }
 
     /**
@@ -174,10 +218,8 @@ class BackendController extends Controller
      */
     public function orders(){
 
-        $filter = $this->crud->ordersFilter();
-        $grid = $this->crud->ordersGrid($filter);
-        $title = $this->crud->getOrderTable();
-        return view('backend/content', compact('filter', 'grid', 'title'));
+        $data['orders'] = Order::with('users','products')->get(); 
+        return view('backend/orders', $data);
     }
 
     /**
@@ -200,12 +242,38 @@ class BackendController extends Controller
      */
     public function userOrders()
     {
-        
 
-        $grid = $this->crud->UserOrdersGrid();
-        $title = $this->crud->getOrderTable();
-        return view('backend/content', compact('grid', 'title'));
+        $id = Auth::user()->id;
+
+        $data['orders'] = Order::with('products')->where('user_id', $id)->get();
+
+        return view('backend/orders', $data);     
     }
+
+    public function orderDetails($orderId){
+        $order = Order::where('id', $orderId)->get();
+        $data['order'] = $order;
+        $data['product'] = Product::where('id', $order[0]->product_id)->get(); 
+        $data['details'] = Order_details::where('order_id', $orderId)->get();
+        $data['payment'] = Payment::where('id', $order[0]->payment_id)->get();
+        $data['shipping'] = Shipping::where('id', $order[0]->shipping_id)->get();
+        $data['total'] = $order[0]->amount + $data['shipping'][0]->rate;
+
+        return view('backend/orderDetails', $data);
+
+    }
+
+    public function deleteOrder($orderId){
+
+        $order = Order::findOrFail($orderId)->delete();
+        $order_details = Order_details::where('order_id', $orderId)->get();
+        $conversation = Conversation::findOrFail($order_details->conversation_id)->delete();
+        Order_details::findOrFail($order_details->id)->delete();  
+
+        Session::flash('flash_message', '¡Orden eliminada satisfactoriamente!');
+        return response(null, Response::HTTP_NO_CONTENT);
+    }
+
 
     /**
      * Edit customer orders
@@ -235,6 +303,9 @@ class BackendController extends Controller
         return view('backend/content', compact('edit', 'title'));
     }
 
+
+
+
     public function getConversations()
     {
         $conversations = Chat::conversation(Chat::conversations()->conversation)
@@ -250,5 +321,12 @@ class BackendController extends Controller
     public function myQuestions(){
 
         return view('backend/questionsUser');
+    }
+
+    public function orderData($product_id){
+
+        return Product::findOrFail($product_id); 
+
+   
     }
 }

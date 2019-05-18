@@ -1,5 +1,5 @@
 <template>
- <div class="container">
+<!--  <div class="container">
 
     <div class="row">
 
@@ -30,7 +30,41 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div>
+    <div class="callout callout-info">
+
+        <h4>Tip!</h4>
+
+        <p>Las preguntas de color verdes ya han sido contestadas.</p>
+
+      </div>
+      <!-- Default box -->
+
+      <div id="custom-search-input">
+
+         <div class="input-group col-md-12">
+
+            <input type="text" class="search-query form-control" v-model="search" placeholder="slug o titulo" />
+
+         </div>
+
+      </div>
+
+      <br><br>
+
+
+    <div v-if="questions">
+
+      <sentence v-for="(question, index) in questionsFiltered" :data=question :key=index></sentence>  
+      
+    </div>
+
+    <div v-else class="d-flex align-items-center justify-content-center py-4" >
+          <h3 class="text-center">No hay preguntas</h3>
+    </div>           
+</div>
 
 </template>
 <script>
@@ -42,7 +76,7 @@ import sentence from './backend/sentence'
             return {
                 errors: {},
                 messages: {},
-                questions: {},
+                questions: [],
                 search: ''
             } 
         },

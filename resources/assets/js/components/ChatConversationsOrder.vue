@@ -1,33 +1,23 @@
 <template>
-  <div>
+    <ul class="list">
 
-       <div class="row">
+      <li class="header">
 
-            <div id="custom-search-input" class="chat-bottom-bar">
+        <input type="text" v-model="search" class="search-query form-control" placeholder="Conversación" />
 
-               <div class="input-group col-md-12">
+      </li>
 
-                  <input type="text" class="  search-query form-control" placeholder="Buscar conversación" v-model="search" />
+      <li>
+        <!-- inner menu: contains the actual data -->
+        <ul class="menu">
 
-               </div>
+          <chatConversationsListOrder v-for="(convo, index) in conversationsFiltered" :key="index" :conversation=convo :user=user></chatConversationsListOrder>
 
-            </div>
+        </ul>
 
-            <br>
+      </li>
 
-            <div class="member_list">
-
-              <ul class="list-unstyled">
-
-                <chatConversationsListOrder v-for="(convo, index) in conversationsFiltered" :key="index" :conversation=convo :user=user></chatConversationsListOrder>
-
-              </ul>
-
-            </div>
-
-      </div>
-
-  </div>
+    </ul>
 
 </template>
 

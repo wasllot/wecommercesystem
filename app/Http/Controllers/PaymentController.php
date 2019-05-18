@@ -71,7 +71,8 @@ class PaymentController extends Controller
         //taxes
         $tax = $this->checkout->checkoutShow();
         $vat_total = $this->checkout->vat();
-        $grand_total = $tax['cartTotal'] + $tax['shippings']->rate + $vat_total;
+        // $grand_total = $tax['cartTotal'] + $tax['shippings']->rate + $vat_total;
+        $grand_total = $tax['cartTotal'] + $tax['shippings']->rate;
         //Details
         $details->setShipping($tax['shippings']->rate)
             ->setTax($vat_total)

@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-3 padbot60">
-                <a class="btn inactive" href="{{ url('cms') }}">@lang('site.continue shopping')</a>
+                <a class="btn inactive" href="{{ url('/') }}">@lang('site.continue shopping')</a>
             </div>
             <!-- //REGISTRATION FORM -->
         </div>

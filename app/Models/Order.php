@@ -24,9 +24,9 @@ class Order extends Model
         'order_date',
         'status',
         'product_id',
-        'size',
+        'shipping_id',
         'img',
-        'color',
+        'payment_id',
         'quantity',
         'amount',
 

@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8">
-    <title>Unauthorized</title>
+    <title>No está autorizado</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="404 page">
     <meta name="author" content="EShop">
@@ -55,12 +55,12 @@
             <!-- CONTAINER -->
             <div class="container">
                 <div class="wrapper404">
-                    <h2>Unauthorized</h2>
+                    <h2>Sin autorización</h2>
 
                     <h2>ERROR</h2>
 
-                    <p>Unauthorized access to the requested resource </p>
-                    <a class="btn btn-white" href="{{ url('cms') }}">Return to home page</a>
+                    <p>No tiene permiso para acceder al área solicitada. </p>
+                    <a class="btn btn-white" href="{{ url('/') }}">Volver</a>
                 </div>
             </div>
             <!-- //CONTAINER -->

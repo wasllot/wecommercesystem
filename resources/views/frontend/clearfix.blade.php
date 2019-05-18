@@ -5,19 +5,19 @@
             <div class="tovar_view_fotos clearfix">
                 <div id="slider2" class="flexslider">
                     <ul class="slides">
-                        <li><a><img src="{{ url('images/products') }}/{{$item->a_img}}" alt=""/></a></li>
-                        <li><a><img src="{{ url('images/products') }}/{{$item->b_img}}" alt=""/></a></li>
-                        <li><a><img src="{{ url('images/products') }}/{{$item->c_img}}" alt=""/></a></li>
+                        <li><a><img src="{{$item->a_img}}" alt=""/></a></li>
+                        <li><a><img src="{{$item->b_img}}" alt=""/></a></li>
+                        <li><a><img src="{{$item->c_img}}" alt=""/></a></li>
                     </ul>
                 </div>
                 <div id="carousel2" class="flexslider">
                     <ul class="slides">
                         <li><a href="javascript:void(0);">
-                                <img src="{{ url('images/products') }}/{{$item->a_img}}" alt=""/></a></li>
+                                <img src="{{$item->a_img}}" alt=""/></a></li>
                         <li><a href="javascript:void(0);">
-                                <img src="{{ url('images/products') }}/{{$item->b_img}}" alt=""/></a></li>
+                                <img src="{{$item->b_img}}" alt=""/></a></li>
                         <li><a href="javascript:void(0);">
-                                <img src="{{ url('images/products') }}/{{$item->c_img}}" alt=""/></a></li>
+                                <img src="{{$item->c_img}}" alt=""/></a></li>
                     </ul>
                 </div>
             </div>
@@ -35,8 +35,7 @@
                 <div class="tovar-color-select">
                     <h4>@lang('site.rate the product')</h4>
                     <div class="pb-4 float-center">
-                        <star-rating :rating="4.67" :round-start-rating="false"></star-rating>
-                        
+                        <product-rating :data="{{$item->id}}"></product-rating>                        
                     </div>
                 </div>
                 <div class="tovar_view_btn">

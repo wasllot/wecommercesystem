@@ -22,6 +22,7 @@ class ConversationController extends Controller
     {
         $conversations = Chat::conversations()->conversation->all();
         // error_log(response($conversations)); 
+
         return response($conversations);
     }
 
@@ -38,6 +39,8 @@ class ConversationController extends Controller
            foreach ($users as $user) {
 
                 if($user->id == auth()->user()->id){
+
+                    // $conversation->created_at = $conversation->created_at->diffForHumans(); 
 
                     array_push($conversationsUser, $conversation); 
 

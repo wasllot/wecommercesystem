@@ -5,9 +5,9 @@
         <div class="tovar_item clearfix">
             <div class="tovar_img">
                 <div class="tovar_img_wrapper" style="height: 370px;">
-                    <img class="img" src="{{ url('images/products') }}/{{$row->a_img}}" alt=""/>
+                    <img class="img" src="{{$row->a_img}}" alt=""/>
                     <img class="img_h fancybox fancybox.ajax" href="{{ url('frame') }}/{{$row->id}}"
-                         src="{{ url('images/products') }}/{{$row->b_img}}" alt=""/>
+                         src="{{$row->b_img}}" alt=""/>
                 </div>
                 <div class="tovar_item_btns">
                     <a class="open-project tovar_view"

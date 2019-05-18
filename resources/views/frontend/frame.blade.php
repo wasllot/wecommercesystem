@@ -22,7 +22,7 @@
 <div class="clearfix padbot40" id="modal-product">
     <div class="tovar_view_fotos clearfix">
         <ul class="slides">
-            <li><a><img src="{{ url('images/products') }}/{{$item->a_img}}"
+            <li><a><img src="{{$item->a_img}}"
                         alt="" class="img-responsive" /></a></li>
         </ul>
     </div>

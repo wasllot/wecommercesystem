@@ -1,4 +1,4 @@
-@extends('backend/tblTemplate')
+	@extends('backend/tblTemplate')
 @section('title',$title)
 @section('body')
     @if(isset($edit))

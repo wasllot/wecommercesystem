@@ -1,119 +1,81 @@
-<nav class="navbar navbar-default navbar-fixed-top navbar-top">
 
-    <div class="container-fluid">
 
-        <div class="navbar-header">
+<header class="main-header">
 
-            <button type="button" class="navbar-expand-toggle">
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>F</b>RVE</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Full</b>Repuesto</span>
+    </a>
 
-                <i class="fa fa-bars icon"></i>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="https://image.flaticon.com/icons/svg/56/56491.svg" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{Auth::user()->name}}</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="https://image.flaticon.com/icons/svg/56/56491.svg" class="img-circle" alt="User Image">
 
-            </button>
-
-            <ol class="breadcrumb navbar-breadcrumb show">
-
-                @admin
-
-                    <li>Panel de administrador</li>
-
-                @endadmin
-
-                @user
-
-                    <li>Panel de usuario</li>
-
-                @enduser
-
-                <li class="active">{{Auth::user()->email}}</li>
-
-                <li class="active">
-
-                    <a href="{{ url('fullrepuesto') }}">Volver al sitio</a>
-
-                </li>
-
-            </ol>
-
-            <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
-
-                <i class="fa fa-th icon"></i>
-
-            </button>
-
-        </div>
-
-        <ul class="nav navbar-nav navbar-right">
-
-            <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
-
-                <i class="fa fa-times icon"></i>
-
-            </button>
-
-            <li class="dropdown profile">
-
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{Auth::user()->name}}
-
-                    <span class="caret"></span>
-                    
-                </a>
-
-                <ul class="dropdown-menu animated fadeInDown">
-
-                    <li>
-
-                        <div class="profile-info">
-
-                            <h4 class="username">{{Auth::user()->name}}</h4>
-
-                            <p>{{Auth::user()->email}}</p>
-
-                            <div class="btn-group margin-bottom-2x" role="group">
-                                <button type="button" class="btn btn-default">
-                                    <i class="fa fa-user"></i>
-
-                                    @admin
-
-                                        <a href="{{ url('backend/admin') }}">Perfil</a>
-
-                                    @endadmin
-
-                                    @user
-
-                                        <a href="{{ url('backend/user') }}">Perfil</a>
-
-                                    @enduser
-
-                                </button>
-
-                                <button type="button" class="btn btn-default">
-
-                                    <i class="fa fa-sign-out"></i>
-
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <p>
+                  {{Auth::user()->email}}
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+<!--                 <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div> -->
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+<!--                 <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                </div> -->
+                <div class="pull-right">
+                    <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         Salir
 
-                                    </a>
+                    </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-
-            </li>
-
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                          style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
         </ul>
+      </div>
 
-    </div>
+    </nav>
 
-</nav>
+</header>
+

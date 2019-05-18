@@ -56,13 +56,18 @@ Vue.component('replies', require('./components/replies/replies.vue'));
 Vue.component('reply', require('./components/replies/reply.vue'));
 // Vue.component('showSentences', require('./components/backend/showSentences.vue'));
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('test', require('./components/test.vue'));
+// Vue.component('test', require('./components/test.vue'));
 Vue.component('chat-conversations', require('./components/ChatConversations.vue'));
 Vue.component('chat-conversations-order', require('./components/ChatConversationsOrder.vue'));
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
 Vue.component('conversation-participants', require('./components/ConversationParticipants.vue'));
 Vue.component('show-user-sentences', require('./components/ShowUserSentences.vue'));
+Vue.component('orders-user', require('./components/Orders.vue'));
+Vue.component('products', require('./components/Products.vue'));
+Vue.component('add-article', require('./components/AddArticle.vue'));
+Vue.component('product-rating', require('./components/ProductRating.vue'));
+Vue.component('product-edit', require('./components/ProductEdit.vue'));
 Vue.component('star-rating', StarRating);
 
 // const files = require.context('./', true, /\.vue$/i)

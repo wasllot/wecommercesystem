@@ -288,16 +288,18 @@ class CrudRepository
      */
     public function ordersFilter()
     {
-        $filter = \DataFilter::source($this->order->with('users', 'products'));
-        $filter->add('id', 'ID', 'text');
-        $filter->add('users.name', 'Usuario', 'text');
-        $filter->add('products.name', 'Producto', 'text');
+        // $filter = \DataFilter::source($this->order->with('users', 'products'));
+        // $filter->add('id', 'ID', 'text');
+        // $filter->add('users.name', 'Usuario', 'text');
+        // $filter->add('products.name', 'Producto', 'text');
         // $filter->add('size', 'Size', 'text');
         // $filter->add('color', 'Color', 'text');
-        $filter->submit('Buscar');
-        $filter->reset('Reiniciar');
-        $filter->build();
-        return $filter;
+        // $filter->submit('Buscar');
+        // $filter->reset('Reiniciar');
+        // $filter->build();
+
+        $orders = $this->order->with('users', 'products');
+        return $orders;
     }
 
     /**
@@ -362,19 +364,23 @@ class CrudRepository
     public function UserOrdersGrid()
     {
         $id = Auth::user()->id;
-        $grid = DataGrid::source($this->order->with('products')->where('user_id', $id));
-        $grid->label('Mis pedidos');
-        $grid->attributes(array("class" => "table table-striped"));
-        $grid->add('id', 'ID', true)->style("width:100px");
-        $grid->add('order_date', 'Fecha');
-        $grid->add('products.name', 'Producto');
-        $grid->add('<img src="/images/products/{{ $img }}" height="25" width="25">', 'Imágen');
-        $grid->add('quantity', 'Cantidad');
-        $grid->add('amount', 'Monto');
-        $grid->edit('/backend/user-orders/edit', 'Orden actual', 'show');
-        $grid->orderBy('id', 'asc');
-        $grid->paginate(10);
-        return $grid;
+        // $grid = DataGrid::source($this->order->with('products')->where('user_id', $id));
+        // $grid->label('Mis pedidos');
+        // $grid->attributes(array("class" => "table table-striped"));
+        // $grid->add('id', 'ID', true)->style("width:100px");
+        // $grid->add('order_date', 'Fecha');
+        // $grid->add('products.name', 'Producto');
+        // $grid->add('<img src="/images/products/{{ $img }}" height="25" width="25">', 'Imágen');
+        // $grid->add('quantity', 'Cantidad');
+        // $grid->add('amount', 'Monto');
+        // $grid->edit('/backend/user-orders/edit', 'Orden actual', 'show');
+        // $grid->orderBy('id', 'asc');
+        // $grid->paginate(10);
+
+        $data['orders'] = Order::where('user_id', $id)->get();
+        $orders = $data['orders'];
+
+        return $data;
     }
 
     /**

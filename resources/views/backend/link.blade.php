@@ -1,5 +1,5 @@
-<li class="menu">
+<li>
     <a href="{{$link}}">
-        <span class="{{$icon}}"></span><span class="title">{{$name}}</span>
+        <i class="{{$icon}}"></i><span>{{$name}}</span>
     </a>
 </li>

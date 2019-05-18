@@ -67,5 +67,6 @@ return [
     'back to home page' => 'Volver a la página de inicio',
     '404 message' => 'The page you are looking for does not exist. Return to the home page',
     'category' => 'Category',
-    'introduce product' => 'Introduce the product you are looking for'
+    'introduce product' => 'Introduce the product you are looking for',
+    'shipping' => 'Shipping'
 ];

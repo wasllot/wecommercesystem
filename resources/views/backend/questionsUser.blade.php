@@ -1,20 +1,34 @@
 @extends('backend.master')
 @section('content')
-        <!-- Main Content -->
-<div class="container-fluid">
-    <div class="side-body">
-        <div class="page-title">
-            <span class="title" style="text-align: center;">Preguntas</span>
-            @include('messages.flash_message')
 
-        </div>
-        <div id="app">
+    <section class="content-header">
+
+      <h1>
+        Preguntas
+        <small>Aquí puedes ver las preguntas</small>
+      </h1>
+
+      <ol class="breadcrumb">
+
+        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+
+        <li class="active">Preguntas</li>
+
+      </ol>
+
+    </section> 
+
+    <div id="app">
+      <!-- Main content -->
+        
+        <section class="content">
 
             <show-user-sentences :user="{{ auth()->user() }}"></show-user-sentences>
 
-        </div>
+        </section>
 
-    </div>
-</div>
+    </div>  
+
+
 <!-- End Main Content -->
 @endsection

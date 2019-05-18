@@ -37,7 +37,7 @@
                                 <li class="clearfix">
 
                                     <img class="tovar_item_small_img"
-                                         src="{{ url('images/products') }}/{{$row->a_img}}" alt=""/>
+                                         src="{{$row->a_img}}" alt=""/>
 
                                     <a href="{{ url('/') }}/{{$row->category->cat}}/{{$row->slug}}/{{$row->id}}" class="tovar_item_small_title"><?php echo $row->name;?></a>
 
@@ -137,7 +137,7 @@
 
                                         <div class="tovar_img">
 
-                                            <img src="{{ url('images/products') }}/{{$row->a_img}}" alt=""/>
+                                            <img src="{{$row->a_img}}" alt=""/>
 
                                             <a class="open-project tovar_view"
                                                href="{{ url('/') }}/{{$row->category->cat}}/{{$row->slug}}/{{$row->id}}">@lang('site.quick view')</a>

@@ -1,40 +1,81 @@
 <template>
-  <div>
-    <br>
-    <br>
-    <div v-for="(message, index) in messages" :key="index"> 
-      
-      <div class="chat-msg box-blue" v-if="message.author.id == user.id">
 
-          <a :href="message.url" target="_blank">
+  <div >
+
+    <div v-for="(message, index) in messages" :key="index">
+
+      <div v-if="message.author.id==user.id" class="direct-chat-msg right">
+
+        <div class="direct-chat-info clearfix">
+
+          <span class="direct-chat-name pull-left" v-if="!message.url">{{message.author.name}}</span>
+
+          <!-- <span class="direct-chat-timestamp pull-right"  v-bind:class="[message.author.id==user.id ? 'pull-right' : 'pull-left']">{{message.created_at}}</span> -->
+
+
+        </div>
+        <!-- /.direct-chat-info -->
+        <div v-if="!message.url">
+          <img class="direct-chat-img" src="https://image.flaticon.com/icons/svg/56/56491.svg" alt="Message User Image">
+        <!-- /.direct-chat-img -->
+
+        <div class="direct-chat-text" v-if="message.message">
+
+          {{message.message}}
+
+        </div>
+
+        </div>
+
+
+        <a v-else :href="message.url" target="_blank">
+
+         <img class="img-responsive pull-right" style="margin-bottom: 1rem;" width="150" v-if="message.type == 'image/png' || message.type == 'image/jpg' || message.type == 'image/jpeg'" :src="message.url" />            
+
+          <p v-else>{{message.name}}</p>
+
+        </a>
+
+      </div>      
+
+      <div v-else class="direct-chat-msg">
+
+        <div class="direct-chat-info clearfix">
+
+          <span class="direct-chat-name pull-right" v-if="!message.url">{{message.author.name}}</span>
+
+          <!-- <span class="direct-chat-timestamp pull-left">{{message.created_at}}</span> -->
+
+        </div>
+        <!-- /.direct-chat-info -->
+
+        <div v-if="!message.url">
+          <img class="direct-chat-img" src="https://image.flaticon.com/icons/svg/56/56491.svg" alt="Message User Image">
+          <!-- /.direct-chat-img -->
+          
+          <div class="direct-chat-text" v-if="message.message">
+          
+            {{message.message}}
+          
+          </div>
+        </div>
+        <a v-else :href="message.url" target="_blank">
 
             <img class="img-responsive" style="margin-bottom: 1rem;" width="150" v-if="message.type == 'image/png' || message.type == 'image/jpg' || message.type == 'image/jpeg'" :src="message.url" />            
 
               <p v-else>{{message.name}}</p>
           </a>
 
-          <p v-if="message.message">{{message.message}}</p>
-          <div class="chat-msg-author">
-              <strong>{{ message.author.name }}</strong>&nbsp;
-          </div>
       </div>
 
-      <div class="chat-msg box-gray" v-else>
 
-          <a :href="message.url" target="_blank">
 
-            <img class="img-responsive" style="margin-bottom: 1rem;" width="150" v-if="message.url" :src="message.url" />
-          </a>
-
-          <p v-if="message.message">{{message.message}}</p>
-          <div class="chat-msg-author">
-              <strong>{{ message.author.name }}</strong>&nbsp;
-          </div>
-      </div>
+        <!-- /.direct-chat-text -->
 
     </div>
 
   </div>
+
 </template>
 
 <script>

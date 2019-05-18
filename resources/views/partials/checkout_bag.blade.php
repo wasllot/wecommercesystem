@@ -3,15 +3,15 @@
     <table class="bag_total">
         <tr class="shipping clearfix">
             <th>@lang('site.products')</th>
-            <td>{!! Helper::price($grand_total) !!}&nbsp Bss</td>
+            <td>{!! Helper::price($grand_total) !!}&nbsp Bs.</td>
         </tr>
-<!--         <tr class="shipping clearfix">
-            <th>SHIPPING RATE</th>
-            <td>{!! Helper::price($shippings->rate) !!}&nbsp{!! $currency !!}</td>
-        </tr> -->
+        <tr class="shipping clearfix">
+            <th>@lang('site.shipping')</th>
+            <td>{!! Helper::price($shippings->rate) !!}&nbsp Bs.</td>
+        </tr>
         <tr class="total clearfix">
             <th>Total</th>
-            <td>{!! Helper::price($finalTotal) !!}&nbsp Bss</td>
+            <td>{!! Helper::price($finalTotal) !!}&nbsp Bs.</td>
         </tr>
     </table>
     <a class="btn active" href="{{ url('checkout/create') }}">@lang('site.finish')</a>

@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container-fluid" style="margin-bottom: 1rem; margin-top: 2rem;" id="questions">
+<!--   <div class="container-fluid" style="margin-bottom: 1rem; margin-top: 2rem;" id="questions">
     
     <div class="card"  v-bind:class="[data.reply_count>0 ? 'bg-s' : 'bg-w']">
         <div class="card-body">
@@ -75,7 +75,95 @@
     </div>
 
 
-  </div>
+  </div> -->
+
+   <div  class="box callout" v-bind:class="[data.reply_count>0 ? 'callout-success' : 'callout-warning']">
+
+        <div class="box-header with-border">
+              
+              <h3 class="box-title" style="color: white !important;">{{data.title}}</h3>
+
+              <div class="box-tools pull-right" style="color: white !important;">
+
+               <button type="button" class="btn btn-box-tool" data-widget="reply" data-toggle="modal" :data-target="'#reply-modal'+data.id">
+                  <i style="color: white !important;" class="fa fa-fw fa-reply"></i>
+                </button>            
+
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Repuesta">
+                  <i style="color: white !important;" class="fa fa-minus"></i>
+                </button>
+
+                <button type="button" class="btn btn-box-tool" data-toggle="modal" :data-target="'#remove-modal'+data.id">
+                  <i style="color: white !important;" class="fa fa-times"></i>
+                </button>
+
+              </div>
+
+        </div>
+
+        <div class="box-body collapsed-box">
+
+              {{data.slug}}      
+
+              <div class="callout" style="padding: 1rem; margin-top: 1rem;">
+
+                {{data.body}}
+
+              </div>
+
+        </div>     
+
+        <div class="modal fade" :id="'reply-modal'+data.id">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header" style="color: black;">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Reponder a {{data.title}}</h4> 
+                </div>
+                <div class="modal-body">
+                
+
+
+                    <createReply :data=data :replies=replies></createReply>
+
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" @click="">Responder</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal fade" :id="'remove-modal'+data.id">
+            <div class="modal-dialog">
+              <div class="modal-content" style="color: black;">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">{{data.title}}</h4>
+                </div>
+                <div class="modal-body">
+                  <p>¿Seguro desea eliminar "{{data.title}}"? No podrá recuperar la pregunta.</p>
+                  <br>
+                  <small>{{data.body}}</small>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-danger" data-widget="remove" data-target="#remove-modal" @click="deleteQuestion()">
+                <i class="fa fa-times"></i>Eliminar</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+
+    </div>
+
 </template>
 
 <script>

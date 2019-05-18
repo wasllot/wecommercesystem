@@ -29,7 +29,6 @@
                 <td>{{ $p->slug }}</td>
                 <td>{{ $p->name}}</td>
                 <td>{{ $p->brands->brand }}</td>
-                <!-- <td>{{implode(",", $p->size->pluck("size")->all())}}</td> -->
                 <td>{{ $p->category->cat }}</td>
                 <td>{{ $p->quantity }}</td>
                 <td>{{ $p->price }}</td>
